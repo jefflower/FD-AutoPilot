@@ -7,11 +7,13 @@ import type { TitleMode } from '../../../shared/components/TicketList';
 import type { ServerTicket, TicketQueryParams } from '../../../shared/types/server';
 import { getTicketStatusOptions, getFdStatusOptions } from '../../../shared/utils/statusLabels';
 import { useAuthContext } from '../../../shared/context/AuthContext';
+import { useIsMobile } from '../../../shared/hooks/useMediaQuery';
 import DetailEmptyState from '../components/DetailEmptyState';
 
 const ServerTicketsTab: React.FC = () => {
     const { isAdmin } = useAuthContext();
     const { t } = useTranslation(['tickets', 'common', 'settings']);
+    const isMobile = useIsMobile();
     const statusOptions = useMemo(() => getTicketStatusOptions(t), [t]);
     const fdStatusOptions = useMemo(() => getFdStatusOptions(), []);
 
@@ -21,6 +23,7 @@ const ServerTicketsTab: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const [selectedId, setSelectedId] = useState<number | null>(null);
     const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
+    const [mobileShowDetail, setMobileShowDetail] = useState(false);
 
     // 查询参数
     const [statusFilter, setStatusFilter] = useState<Set<string>>(new Set());  // 空集=全部
@@ -182,163 +185,195 @@ const ServerTicketsTab: React.FC = () => {
         return () => clearTimeout(timer);
     }, [toasts]);
 
+    // 列表面板内容（移动端全宽/桌面端 w-80 共用）
+    const renderListPanel = () => (
+        <>
+            {/* 头部对齐 MQ 风格 */}
+            <div className="p-4 border-b border-white/10 bg-gradient-to-br from-indigo-900/40 to-slate-900/20">
+                <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
+                        <span className="w-1 h-3 bg-indigo-500 rounded-full"></span>
+                        {t('list.title')}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                        {isAdmin && (
+                            <button
+                                onClick={() => setShowAdminPanel(!showAdminPanel)}
+                                className={`p-1 rounded-md transition-all ${showAdminPanel ? 'bg-red-500/20 text-red-400' : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'}`}
+                                title={t('tickets:admin.title')}
+                            >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </button>
+                        )}
+                        <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30`}>
+                            {t('list.active')}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-3">
+                    <div className="flex bg-black/40 rounded-lg p-1 border border-white/5">
+                        <button
+                            onClick={() => setDisplayLang('original')}
+                            className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'original' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+                        >
+                            {t('list.original')}
+                        </button>
+                        <button
+                            onClick={() => setDisplayLang('cn')}
+                            className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'cn' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+                        >
+                            {t('list.chinese')}
+                        </button>
+                    </div>
+
+                    <div className="relative group">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder={t('list.searchPlaceholder')}
+                            className="w-full pl-8 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-all"
+                        />
+                        <svg className="w-3.5 h-3.5 absolute left-2.5 top-2 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            {/* 管理员操作面板 */}
+            {isAdmin && showAdminPanel && (
+                <div className="p-3 border-b border-red-500/20 bg-red-500/5 space-y-2">
+                    <div className="text-[10px] font-black text-red-400 uppercase tracking-[0.15em]">{t('tickets:admin.title')}</div>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={() => { setShowPurgeDialog(true); setPurgePassword(''); setPurgeResult(null); }}
+                            className="flex-1 px-3 py-1.5 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20"
+                        >
+                            {t('tickets:admin.resetQueues')}
+                        </button>
+                        <button
+                            onClick={() => { setShowPurgeAllDialog(true); setPurgeAllPassword(''); setPurgeAllResult(null); }}
+                            className="flex-1 px-3 py-1.5 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20"
+                        >
+                            {t('tickets:admin.purgeAll')}
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* 状态筛选 - 多选胶囊 */}
+            <div className="p-2 border-b border-white/10 bg-slate-900/40 space-y-1.5">
+                <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
+                    {statusOptions.map(opt => {
+                        const isAll = opt.value === '';
+                        const active = isAll ? statusFilter.size === 0 : statusFilter.has(opt.value);
+                        return (
+                            <button
+                                key={opt.value}
+                                onClick={() => toggleStatus(opt.value)}
+                                className={`flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${active
+                                    ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400'
+                                    : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
+                                    }`}
+                            >
+                                {opt.label}
+                            </button>
+                        );
+                    })}
+                </div>
+                {/* FD 状态筛选 */}
+                <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
+                    <span className="flex-shrink-0 text-[9px] text-slate-600 font-medium mr-0.5">FD:</span>
+                    {fdStatusOptions.map(opt => {
+                        const isAll = opt.value === 0;
+                        const active = isAll ? fdStatusFilter.size === 0 : fdStatusFilter.has(opt.value);
+                        return (
+                            <button
+                                key={opt.value}
+                                onClick={() => toggleFdStatus(opt.value)}
+                                className={`flex-shrink-0 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border ${active
+                                    ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
+                                    : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
+                                    }`}
+                            >
+                                {opt.label}
+                            </button>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* 工单列表 */}
+            <TicketList
+                tickets={tickets}
+                selectedId={selectedId}
+                onSelect={(ticket) => {
+                    setSelectedId(ticket.id);
+                    if (isMobile) setMobileShowDetail(true);
+                }}
+                themeColor="indigo"
+                titleMode={titleMode}
+                pagination={{ mode: 'infinite', hasMore, loadMore: handleLoadMore, loadingMore }}
+                loading={loading}
+                emptyText={t('list.noData')}
+            />
+
+            {error && (
+                <div className="m-2 p-2 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-bold">
+                    {error}
+                </div>
+            )}
+        </>
+    );
+
     return (
         <div className="flex-1 flex h-full overflow-hidden">
-            {/* 左侧列表 */}
-            <div className="w-80 border-r border-white/10 flex flex-col flex-shrink-0 bg-slate-900/20">
-                {/* 头部对齐 MQ 风格 */}
-                <div className="p-4 border-b border-white/10 bg-gradient-to-br from-indigo-900/40 to-slate-900/20">
-                    <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
-                            <span className="w-1 h-3 bg-indigo-500 rounded-full"></span>
-                            {t('list.title')}
-                        </h3>
-                        <div className="flex items-center gap-2">
-                            {isAdmin && (
-                                <button
-                                    onClick={() => setShowAdminPanel(!showAdminPanel)}
-                                    className={`p-1 rounded-md transition-all ${showAdminPanel ? 'bg-red-500/20 text-red-400' : 'text-slate-500 hover:text-slate-300 hover:bg-white/5'}`}
-                                    title={t('tickets:admin.title')}
-                                >
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    </svg>
-                                </button>
-                            )}
-                            <div className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30`}>
-                                {t('list.active')}
-                            </div>
-                        </div>
+            {isMobile ? (
+                mobileShowDetail && selectedTicket ? (
+                    /* 移动端：全屏详情 */
+                    <div className="flex-1 flex flex-col h-full">
+                        <ServerTicketDetail
+                            ticket={selectedTicket}
+                            isEmbed={true}
+                            isSplitMode={false}
+                            onRefresh={() => loadTickets(true)}
+                            onBack={() => setMobileShowDetail(false)}
+                        />
                     </div>
-
-                    <div className="space-y-3">
-                        <div className="flex bg-black/40 rounded-lg p-1 border border-white/5">
-                            <button
-                                onClick={() => setDisplayLang('original')}
-                                className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'original' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
-                            >
-                                {t('list.original')}
-                            </button>
-                            <button
-                                onClick={() => setDisplayLang('cn')}
-                                className={`flex-1 py-1 text-[10px] font-bold rounded-md transition-all ${displayLang === 'cn' ? 'bg-indigo-500 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
-                            >
-                                {t('list.chinese')}
-                            </button>
-                        </div>
-
-                        <div className="relative group">
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder={t('list.searchPlaceholder')}
-                                className="w-full pl-8 pr-3 py-1.5 bg-black/40 border border-white/5 rounded-lg text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 transition-all"
-                            />
-                            <svg className="w-3.5 h-3.5 absolute left-2.5 top-2 text-slate-500 group-focus-within:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                {/* 管理员操作面板 */}
-                {isAdmin && showAdminPanel && (
-                    <div className="p-3 border-b border-red-500/20 bg-red-500/5 space-y-2">
-                        <div className="text-[10px] font-black text-red-400 uppercase tracking-[0.15em]">{t('tickets:admin.title')}</div>
-                        <div className="flex gap-2">
-                            <button
-                                onClick={() => { setShowPurgeDialog(true); setPurgePassword(''); setPurgeResult(null); }}
-                                className="flex-1 px-3 py-1.5 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20"
-                            >
-                                {t('tickets:admin.resetQueues')}
-                            </button>
-                            <button
-                                onClick={() => { setShowPurgeAllDialog(true); setPurgeAllPassword(''); setPurgeAllResult(null); }}
-                                className="flex-1 px-3 py-1.5 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20"
-                            >
-                                {t('tickets:admin.purgeAll')}
-                            </button>
-                        </div>
-                    </div>
-                )}
-
-                {/* 状态筛选 - 多选胶囊 */}
-                <div className="p-2 border-b border-white/10 bg-slate-900/40 space-y-1.5">
-                    <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
-                        {statusOptions.map(opt => {
-                            const isAll = opt.value === '';
-                            const active = isAll ? statusFilter.size === 0 : statusFilter.has(opt.value);
-                            return (
-                                <button
-                                    key={opt.value}
-                                    onClick={() => toggleStatus(opt.value)}
-                                    className={`flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border ${active
-                                        ? 'bg-indigo-500/20 border-indigo-500/50 text-indigo-400'
-                                        : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
-                                        }`}
-                                >
-                                    {opt.label}
-                                </button>
-                            );
-                        })}
-                    </div>
-                    {/* FD 状态筛选 */}
-                    <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 custom-scrollbar-hidden no-scrollbar">
-                        <span className="flex-shrink-0 text-[9px] text-slate-600 font-medium mr-0.5">FD:</span>
-                        {fdStatusOptions.map(opt => {
-                            const isAll = opt.value === 0;
-                            const active = isAll ? fdStatusFilter.size === 0 : fdStatusFilter.has(opt.value);
-                            return (
-                                <button
-                                    key={opt.value}
-                                    onClick={() => toggleFdStatus(opt.value)}
-                                    className={`flex-shrink-0 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border ${active
-                                        ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
-                                        : 'bg-white/5 border-transparent text-slate-500 hover:bg-white/10 hover:text-slate-300'
-                                        }`}
-                                >
-                                    {opt.label}
-                                </button>
-                            );
-                        })}
-                    </div>
-                </div>
-
-                {/* 工单列表 */}
-                <TicketList
-                    tickets={tickets}
-                    selectedId={selectedId}
-                    onSelect={(ticket) => setSelectedId(ticket.id)}
-                    themeColor="indigo"
-                    titleMode={titleMode}
-                    pagination={{ mode: 'infinite', hasMore, loadMore: handleLoadMore, loadingMore }}
-                    loading={loading}
-                    emptyText={t('list.noData')}
-                />
-
-                {error && (
-                    <div className="m-2 p-2 bg-red-500/10 border border-red-500/20 rounded text-[10px] text-red-400 font-bold">
-                        {error}
-                    </div>
-                )}
-            </div>
-
-            {/* 右侧详情 */}
-            <div className="flex-1 bg-slate-900/40 relative">
-                {selectedTicket ? (
-                    <ServerTicketDetail
-                        ticket={selectedTicket}
-                        isEmbed={true}
-                        isSplitMode={isSplitMode}
-                        setIsSplitMode={setIsSplitMode}
-                        onRefresh={() => loadTickets(true)}
-                    />
                 ) : (
-                    <DetailEmptyState title={t('list.selectTicketHint')} />
-                )}
-            </div>
+                    /* 移动端：全宽列表 */
+                    <div className="flex-1 flex flex-col h-full bg-slate-900/20">
+                        {renderListPanel()}
+                    </div>
+                )
+            ) : (
+                <>
+                    {/* 桌面端：左侧列表 */}
+                    <div className="w-80 border-r border-white/10 flex flex-col flex-shrink-0 bg-slate-900/20">
+                        {renderListPanel()}
+                    </div>
+
+                    {/* 桌面端：右侧详情 */}
+                    <div className="flex-1 bg-slate-900/40 relative">
+                        {selectedTicket ? (
+                            <ServerTicketDetail
+                                ticket={selectedTicket}
+                                isEmbed={true}
+                                isSplitMode={isSplitMode}
+                                setIsSplitMode={setIsSplitMode}
+                                onRefresh={() => loadTickets(true)}
+                            />
+                        ) : (
+                            <DetailEmptyState title={t('list.selectTicketHint')} />
+                        )}
+                    </div>
+                </>
+            )}
 
             {/* 重置队列确认对话框 */}
             {showPurgeDialog && (

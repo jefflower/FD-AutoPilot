@@ -4,6 +4,7 @@ import { agentApi } from '../services/api';
 import { useServerEvent } from '../context/ServerEventsContext';
 import { useAgentContext } from '../agents/AgentContext';
 import { usePollingControl } from '../hooks/usePollingControl';
+import { useIsMobile } from '../hooks/useMediaQuery';
 import CyberOfficePopover from './CyberOfficePopover';
 
 interface CyberOfficeFloatProps {
@@ -11,6 +12,7 @@ interface CyberOfficeFloatProps {
 }
 
 const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice }) => {
+  const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [executingCount, setExecutingCount] = useState(0);
   const { canExecute, startupReady } = useAgentContext();
@@ -97,6 +99,9 @@ const CyberOfficeFloat: React.FC<CyberOfficeFloatProps> = ({ onNavigateToOffice 
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
+
+  // 移动端隐藏浮球（底部导航栏已有 AI Dashboard 入口）
+  if (isMobile) return null;
 
   return (
     <>

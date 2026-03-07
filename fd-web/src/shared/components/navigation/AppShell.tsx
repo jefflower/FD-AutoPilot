@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import ModuleRail from './ModuleRail';
 import type { ConnectionIndicatorStatus } from './ModuleRail';
 import ContextSidebar from './ContextSidebar';
+import MobileBottomNav from './MobileBottomNav';
 import {
   navigationModules,
   bottomNavItems,
@@ -11,6 +12,7 @@ import type { TabType } from '../../types/navigation';
 import type { QueueCounts } from '../../types/server';
 import { useAuthContext } from '../../context/AuthContext';
 import { useServerEvents } from '../../context/ServerEventsContext';
+import { useIsMobile } from '../../hooks/useMediaQuery';
 import {
   getHeartbeatStatus,
   onHeartbeatStatusChange,
@@ -51,6 +53,7 @@ const AppShell: React.FC<AppShellProps> = ({
 }) => {
   const { isAdmin, user } = useAuthContext();
   const username = user?.username;
+  const isMobile = useIsMobile();
   const [activeModuleId, setActiveModuleId] = useState<string>('ticket');
 
   // ---- 自动收起配置 ----
@@ -369,6 +372,27 @@ const AppShell: React.FC<AppShellProps> = ({
   const accentRgbMap: Record<string, string> = { indigo: '99,102,241', amber: '245,158,11', cyan: '6,182,212' };
   const accentRgb = displayModule ? (accentRgbMap[displayModule.color] || accentRgbMap.indigo) : accentRgbMap.indigo;
 
+  // ---- 移动端布局 ----
+  if (isMobile) {
+    return (
+      <div className="flex flex-col h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+        {/* Content Area */}
+        <div className="flex-1 flex overflow-hidden">
+          {children}
+        </div>
+
+        {/* Mobile Bottom Navigation */}
+        <MobileBottomNav
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          queueCounts={queueCounts}
+          isAdmin={isAdmin}
+        />
+      </div>
+    );
+  }
+
+  // ---- 桌面端布局 ----
   return (
     <div className="flex h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       {/* ModuleRail — onMouseLeave 统一处理离开导航区域 */}

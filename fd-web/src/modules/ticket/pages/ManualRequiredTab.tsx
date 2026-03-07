@@ -18,16 +18,19 @@ import TicketList from '../../../shared/components/TicketList';
 import ReplyEditor from '../components/ticket-detail/ReplyEditor';
 import type { TranslateDirection } from '../components/ticket-detail/ReplyEditor';
 import type { ServerTicket } from '../../../shared/types/server';
+import { useIsMobile } from '../../../shared/hooks/useMediaQuery';
 import {
   AlertTriangle, Play, CheckCircle2, Loader2, MessageSquare, Sparkles,
 } from 'lucide-react';
 
 const ManualRequiredTab: React.FC = () => {
   const { t } = useTranslation('common');
+  const isMobile = useIsMobile();
   const [tickets, setTickets] = useState<ServerTicket[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [selectedTicket, setSelectedTicket] = useState<ServerTicket | null>(null);
+  const [mobileShowDetail, setMobileShowDetail] = useState(false);
 
   // 操作状态
   const [acting, setActing] = useState<'continue' | 'complete' | null>(null);
@@ -242,135 +245,230 @@ const ManualRequiredTab: React.FC = () => {
     setTimeout(() => setConfirmAction(null), 200);
   }, []);
 
-  return (
-    <div className="flex-1 flex h-full overflow-hidden">
-      {/* 左侧面板 */}
-      <div className="w-80 border-r border-white/10 flex flex-col flex-shrink-0 bg-slate-900/20">
-        {/* 头部 */}
-        <div className="p-4 border-b border-white/10 bg-gradient-to-br from-red-900/40 to-slate-900/20">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
-              <span className="w-1 h-3 bg-red-500 rounded-full"></span>
-              人工处理
-            </h3>
-            <div className="flex items-center gap-2">
-              {/* 工单数量 badge */}
-              <div className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-red-500/20 text-red-400 border border-red-500/30">
-                {tickets.length}
-              </div>
+  // 列表面板内容（移动端全宽/桌面端 w-80 共用）
+  const renderListPanel = () => (
+    <>
+      {/* 头部 */}
+      <div className="p-4 border-b border-white/10 bg-gradient-to-br from-red-900/40 to-slate-900/20">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="font-bold text-white text-sm tracking-wide flex items-center gap-2">
+            <span className="w-1 h-3 bg-red-500 rounded-full"></span>
+            人工处理
+          </h3>
+          <div className="flex items-center gap-2">
+            {/* 工单数量 badge */}
+            <div className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest bg-red-500/20 text-red-400 border border-red-500/30">
+              {tickets.length}
             </div>
-          </div>
-
-          {/* 刷新按钮 */}
-          <div className="flex gap-2">
-            <button
-              onClick={() => fetchTickets()}
-              disabled={loading}
-              className="flex-1 h-8 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20 flex items-center justify-center gap-1.5"
-            >
-              <svg className={`w-3 h-3 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              {t('button.refresh')}
-            </button>
           </div>
         </div>
 
-        {/* 工单列表 */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-4">
-          <div>
-            <div className="flex items-center justify-between px-2 mb-2">
-              <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
-                {tickets.length > 0 && <span className="w-1.5 h-1.5 bg-red-400 rounded-full animate-ping"></span>}
-                需人工处理
-              </h4>
-              <span className="text-[10px] font-mono text-red-500/50">({tickets.length})</span>
-            </div>
-
-            {tickets.length === 0 && !loading ? (
-              <EmptyStateHint message="暂无需人工处理的工单" />
-            ) : (
-              <TicketList
-                tickets={tickets}
-                selectedId={selectedId}
-                onSelect={(ticket) => {
-                  setSelectedId(selectedId === ticket.id ? null : ticket.id);
-                  setConfirmAction(null);
-                }}
-                themeColor="red"
-                titleMode="auto"
-                loading={loading}
-                renderStatus={(_ticket) => (
-                  <span className="text-[8px] font-black uppercase tracking-tighter text-red-400/50 flex-shrink-0">
-                    需人工处理
-                  </span>
-                )}
-              />
-            )}
-          </div>
+        {/* 刷新按钮 */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => fetchTickets()}
+            disabled={loading}
+            className="flex-1 h-8 bg-red-600/30 hover:bg-red-600/50 text-red-300 text-[10px] font-bold rounded-lg transition-all border border-red-500/20 flex items-center justify-center gap-1.5"
+          >
+            <svg className={`w-3 h-3 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            {t('button.refresh')}
+          </button>
         </div>
       </div>
 
-      {/* 右侧内容区 */}
-      <div className="flex-1 bg-slate-900/40 relative flex flex-col">
-        {selectedTicket ? (
-          <>
-            {/* 工单详情（占据主要空间） */}
-            <div className="flex-1 overflow-hidden">
-              <ServerTicketDetail
-                ticket={selectedTicket}
-                isEmbed={true}
-                isSplitMode={isSplitMode}
-                setIsSplitMode={setIsSplitMode}
-                onRefresh={handleRefresh}
-              />
+      {/* 工单列表 */}
+      <div className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-4">
+        <div>
+          <div className="flex items-center justify-between px-2 mb-2">
+            <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] flex items-center gap-2">
+              {tickets.length > 0 && <span className="w-1.5 h-1.5 bg-red-400 rounded-full animate-ping"></span>}
+              需人工处理
+            </h4>
+            <span className="text-[10px] font-mono text-red-500/50">({tickets.length})</span>
+          </div>
+
+          {tickets.length === 0 && !loading ? (
+            <EmptyStateHint message="暂无需人工处理的工单" />
+          ) : (
+            <TicketList
+              tickets={tickets}
+              selectedId={selectedId}
+              onSelect={(ticket) => {
+                const newId = selectedId === ticket.id ? null : ticket.id;
+                setSelectedId(newId);
+                setConfirmAction(null);
+                if (isMobile && newId !== null) setMobileShowDetail(true);
+              }}
+              themeColor="red"
+              titleMode="auto"
+              loading={loading}
+              renderStatus={(_ticket) => (
+                <span className="text-[8px] font-black uppercase tracking-tighter text-red-400/50 flex-shrink-0">
+                  需人工处理
+                </span>
+              )}
+            />
+          )}
+        </div>
+      </div>
+    </>
+  );
+
+  // 详情区域 + 手动回复面板 + 操作栏
+  const renderDetailArea = () => {
+    if (!selectedTicket) {
+      return (
+        <DetailEmptyState
+          title="选择一个工单进行处理"
+          subtitle="从左侧列表选择需人工处理的工单，查看详情并执行操作"
+        />
+      );
+    }
+
+    return (
+      <>
+        {/* 工单详情（占据主要空间） */}
+        <div className="flex-1 overflow-hidden">
+          <ServerTicketDetail
+            ticket={selectedTicket}
+            isEmbed={true}
+            isSplitMode={isMobile ? false : isSplitMode}
+            setIsSplitMode={isMobile ? undefined : setIsSplitMode}
+            onRefresh={handleRefresh}
+            onBack={isMobile ? () => setMobileShowDetail(false) : undefined}
+          />
+        </div>
+
+        {/* 手动回复面板（展开时在详情与操作栏之间） */}
+        {showManualReply && selectedTicket && (
+          <div className={`border-t border-white/10 bg-slate-800/60 p-4 space-y-3 ${isMobile ? 'w-full' : ''}`}>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-1 h-3 bg-purple-500 rounded-full"></div>
+              <span className="text-xs font-bold text-purple-400">手动回复</span>
+              <span className="text-[10px] text-slate-500">
+                目标语言: {selectedTicket.sourceLang || 'en'}
+              </span>
             </div>
+            <ReplyEditor
+              targetValue={manualTargetReply}
+              zhValue={manualZhReply}
+              targetLang={selectedTicket.sourceLang || 'en'}
+              onTargetChange={setManualTargetReply}
+              onZhChange={setManualZhReply}
+              onTranslate={handleTranslate}
+              translating={translating}
+              enabledDirections={['zh_to_target', 'target_to_zh']}
+              primaryAction={{
+                label: '提交并审核',
+                loadingLabel: '提交中...',
+                loading: submittingReply,
+                disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
+                onClick: () => handleSubmitManualReply('PENDING_AUDIT'),
+              }}
+              secondaryAction={{
+                label: '提交并完成',
+                loadingLabel: '提交中...',
+                loading: submittingReply,
+                disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
+                onClick: () => handleSubmitManualReply('COMPLETED'),
+              }}
+              cancelAction={{
+                label: '取消',
+                onClick: () => { setShowManualReply(false); setManualZhReply(''); setManualTargetReply(''); },
+              }}
+              themeColor="purple"
+              minTextareaHeight="120px"
+            />
+          </div>
+        )}
 
-            {/* 手动回复面板（展开时在详情与操作栏之间） */}
-            {showManualReply && selectedTicket && (
-              <div className="border-t border-white/10 bg-slate-800/60 p-4 space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1 h-3 bg-purple-500 rounded-full"></div>
-                  <span className="text-xs font-bold text-purple-400">手动回复</span>
-                  <span className="text-[10px] text-slate-500">
-                    目标语言: {selectedTicket.sourceLang || 'en'}
-                  </span>
-                </div>
-                <ReplyEditor
-                  targetValue={manualTargetReply}
-                  zhValue={manualZhReply}
-                  targetLang={selectedTicket.sourceLang || 'en'}
-                  onTargetChange={setManualTargetReply}
-                  onZhChange={setManualZhReply}
-                  onTranslate={handleTranslate}
-                  translating={translating}
-                  enabledDirections={['zh_to_target', 'target_to_zh']}
-                  primaryAction={{
-                    label: '提交并审核',
-                    loadingLabel: '提交中...',
-                    loading: submittingReply,
-                    disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
-                    onClick: () => handleSubmitManualReply('PENDING_AUDIT'),
-                  }}
-                  secondaryAction={{
-                    label: '提交并完成',
-                    loadingLabel: '提交中...',
-                    loading: submittingReply,
-                    disabled: !manualTargetReply.trim() || !manualZhReply.trim(),
-                    onClick: () => handleSubmitManualReply('COMPLETED'),
-                  }}
-                  cancelAction={{
-                    label: '取消',
-                    onClick: () => { setShowManualReply(false); setManualZhReply(''); setManualTargetReply(''); },
-                  }}
-                  themeColor="purple"
-                  minTextareaHeight="120px"
-                />
+        {/* 底部操作工具栏 */}
+        <div
+          className={`border-t border-white/10 bg-slate-800/40 ${
+            isMobile ? 'px-3 py-3' : 'flex items-center justify-between px-5 py-3'
+          }`}
+          onBlur={handleBlur}
+        >
+          {isMobile ? (
+            /* 移动端：2 行 wrap 布局，大按钮 */
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 text-red-400 flex-shrink-0" />
+                <span className="text-xs text-slate-400">
+                  #{selectedTicket.externalId || selectedTicket.id}
+                </span>
               </div>
-            )}
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => handleAction(selectedTicket.id, 'continue')}
+                  disabled={acting !== null}
+                  className={`inline-flex items-center gap-1.5 px-3 h-10 rounded-md text-sm font-medium transition-all ${
+                    confirmAction === 'continue'
+                      ? 'bg-blue-600 text-white ring-2 ring-blue-400/50'
+                      : 'bg-blue-500/15 text-blue-400 hover:bg-blue-500/25'
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {acting === 'continue' ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Play className="w-4 h-4" />
+                  )}
+                  {confirmAction === 'continue' ? '确认?' : '继续处理'}
+                </button>
 
-            {/* 底部操作工具栏 */}
-            <div className="flex items-center justify-between px-5 py-3 border-t border-white/10 bg-slate-800/40" onBlur={handleBlur}>
+                <button
+                  onClick={() => handleAction(selectedTicket.id, 'complete')}
+                  disabled={acting !== null}
+                  className={`inline-flex items-center gap-1.5 px-3 h-10 rounded-md text-sm font-medium transition-all ${
+                    confirmAction === 'complete'
+                      ? 'bg-emerald-600 text-white ring-2 ring-emerald-400/50'
+                      : 'bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25'
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {acting === 'complete' ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <CheckCircle2 className="w-4 h-4" />
+                  )}
+                  {confirmAction === 'complete' ? '确认?' : '完结'}
+                </button>
+
+                <button
+                  onClick={handleAiReply}
+                  onBlur={() => setTimeout(() => setConfirmAiReply(false), 200)}
+                  disabled={aiReplying || submittingReply}
+                  className={`inline-flex items-center gap-1.5 px-3 h-10 rounded-md text-sm font-medium transition-all ${
+                    confirmAiReply
+                      ? 'bg-amber-600 text-white ring-2 ring-amber-400/50'
+                      : 'bg-amber-500/15 text-amber-400 hover:bg-amber-500/25'
+                  } disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {aiReplying ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Sparkles className="w-4 h-4" />
+                  )}
+                  {aiReplying ? '提交中...' : confirmAiReply ? '确认?' : 'AI回复'}
+                </button>
+
+                <button
+                  onClick={() => setShowManualReply(!showManualReply)}
+                  className={`inline-flex items-center gap-1.5 px-3 h-10 rounded-md text-sm font-medium transition-all ${
+                    showManualReply
+                      ? 'bg-purple-600 text-white ring-2 ring-purple-400/50'
+                      : 'bg-purple-500/15 text-purple-400 hover:bg-purple-500/25'
+                  }`}
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  手动回复
+                </button>
+              </div>
+            </div>
+          ) : (
+            /* 桌面端：原有一行布局 */
+            <>
               <div className="flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4 text-red-400" />
                 <span className="text-xs text-slate-400">
@@ -442,15 +540,40 @@ const ManualRequiredTab: React.FC = () => {
                   手动回复
                 </button>
               </div>
-            </div>
-          </>
+            </>
+          )}
+        </div>
+      </>
+    );
+  };
+
+  return (
+    <div className="flex-1 flex h-full overflow-hidden">
+      {isMobile ? (
+        mobileShowDetail && selectedTicket ? (
+          /* 移动端：全屏详情 + 操作栏 */
+          <div className="flex-1 flex flex-col h-full bg-slate-900/40">
+            {renderDetailArea()}
+          </div>
         ) : (
-          <DetailEmptyState
-            title="选择一个工单进行处理"
-            subtitle="从左侧列表选择需人工处理的工单，查看详情并执行操作"
-          />
-        )}
-      </div>
+          /* 移动端：全宽列表 */
+          <div className="flex-1 flex flex-col h-full bg-slate-900/20">
+            {renderListPanel()}
+          </div>
+        )
+      ) : (
+        <>
+          {/* 桌面端：左侧面板 */}
+          <div className="w-80 border-r border-white/10 flex flex-col flex-shrink-0 bg-slate-900/20">
+            {renderListPanel()}
+          </div>
+
+          {/* 桌面端：右侧内容区 */}
+          <div className="flex-1 bg-slate-900/40 relative flex flex-col">
+            {renderDetailArea()}
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { isTauriEnv, tauriInvoke } from '../../../../tauri/bridge';
 import { serverApi } from '../../../../shared/services/serverApi';
+import { useIsMobile } from '../../../../shared/hooks/useMediaQuery';
 import ReplyEditor from './ReplyEditor';
 
 interface Reply {
@@ -25,6 +26,7 @@ interface ReplyHistoryPanelProps {
     submitting: boolean;
     onSubmitAudit: (auditState: AuditState) => void;
     onRefresh?: () => void | Promise<void>;
+    hideAuditUI?: boolean; // 移动端底部操作栏接管审核时，隐藏此处审核 UI
 }
 
 /**
@@ -58,8 +60,10 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
     submitting,
     onSubmitAudit,
     onRefresh,
+    hideAuditUI = false,
 }) => {
     const { t } = useTranslation(['tickets', 'common']);
+    const isMobile = useIsMobile();
     const [auditState, setAuditState] = useState<AuditState>({
         replyId: null,
         result: 'PASS',
@@ -244,21 +248,21 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                                     </div>
                                 </div>
 
-                                {/* 审核区域：仅当工单状态为待审核时显示 */}
-                                {ticketStatus === 'PENDING_AUDIT' && (
+                                {/* 审核区域：仅当工单状态为待审核时显示（移动端底部栏接管时隐藏） */}
+                                {ticketStatus === 'PENDING_AUDIT' && !hideAuditUI && (
                                     <div className="mt-4 pt-4 border-t border-slate-700/50">
                                         {auditState.replyId === reply.id ? (
                                             <div className="space-y-4 bg-slate-900/40 p-4 rounded-xl border border-blue-500/20 animate-in fade-in slide-in-from-top-2">
                                                 <div className="flex items-center gap-4">
                                                     <button
                                                         onClick={() => setAuditState(s => ({ ...s, result: 'PASS' }))}
-                                                        className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                        className={`flex-1 ${isMobile ? 'py-3 text-sm' : 'py-2 text-xs'} font-bold rounded-lg border transition-all ${auditState.result === 'PASS' ? 'bg-emerald-600 border-emerald-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
                                                     >
                                                         {t('history.approve')}
                                                     </button>
                                                     <button
                                                         onClick={() => setAuditState(s => ({ ...s, result: 'REJECT' }))}
-                                                        className={`flex-1 py-2 text-xs font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                        className={`flex-1 ${isMobile ? 'py-3 text-sm' : 'py-2 text-xs'} font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
                                                     >
                                                         {t('history.reject')}
                                                     </button>
@@ -267,7 +271,7 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                                                     value={auditState.remark}
                                                     onChange={(e) => setAuditState(s => ({ ...s, remark: e.target.value }))}
                                                     placeholder={t('history.auditPlaceholder')}
-                                                    className="w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none h-20 resize-none transition-colors"
+                                                    className={`w-full bg-black/20 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder:text-slate-600 focus:border-blue-500 outline-none ${isMobile ? 'h-28' : 'h-20'} resize-none transition-colors`}
                                                 />
                                                 <div className="flex justify-end gap-3">
                                                     <button

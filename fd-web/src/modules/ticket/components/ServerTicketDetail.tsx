@@ -4,6 +4,7 @@ import { ServerTicket, ConversationNote } from '../../../shared/types/server';
 import { serverApi } from '../../../shared/services/serverApi';
 import { AGENT_MAP } from '../../../shared/constants/agentMap';
 import { isTauriEnv } from '../../../tauri/bridge';
+import { useIsMobile } from '../../../shared/hooks/useMediaQuery';
 import ReplyHistoryPanel from './ticket-detail/ReplyHistoryPanel';
 import StatusTimeline from './ticket-detail/StatusTimeline';
 
@@ -23,6 +24,7 @@ interface ServerTicketDetailProps {
     isEmbed?: boolean;
     isSplitMode?: boolean;
     setIsSplitMode?: (s: boolean) => void;
+    onBack?: () => void;  // 移动端返回按钮回调
 }
 
 interface ParsedContent {
@@ -44,8 +46,14 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     // isEmbed = false,
     isSplitMode: propIsSplitMode,
     setIsSplitMode: propSetIsSplitMode,
+    onBack,
 }) => {
     const { t } = useTranslation(['tickets', 'common']);
+    const isMobile = useIsMobile();
+    const [showTranslation, setShowTranslation] = useState(false); // 移动端语言翻转：false=英文原文, true=中文翻译
+    // 移动端审核驳回 UI 状态
+    const [mobileRejectExpanded, setMobileRejectExpanded] = useState(false);
+    const [mobileRejectRemark, setMobileRejectRemark] = useState('');
 
     // 审核提交状态（供 ReplyHistoryPanel 使用）
     const [auditSubmitting, setAuditSubmitting] = useState(false);
@@ -205,7 +213,8 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     };
 
     const renderChatBubble = (msg: any, isIncoming: boolean, isEmerald: boolean = false, isDesc: boolean = false) => {
-        const bubbleBaseClass = "p-3 rounded-lg shadow-sm transition-all duration-200 break-all overflow-wrap-anywhere min-w-0 max-w-[90%]";
+        const maxWidthClass = isMobile ? "max-w-[95%]" : "max-w-[90%]";
+        const bubbleBaseClass = `p-3 rounded-lg shadow-sm transition-all duration-200 break-all overflow-wrap-anywhere min-w-0 ${maxWidthClass}`;
         const incomingClass = isEmerald ? "bg-emerald-900/40 text-emerald-100 border border-emerald-700/50" : "bg-slate-700/60 text-slate-100 border border-slate-600/50";
         const outgoingClass = "bg-blue-600/30 text-blue-50 border border-blue-500/30";
 
@@ -229,55 +238,103 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
     return (
         <div className="h-full flex flex-col bg-slate-900 overflow-hidden relative">
             {/* Header */}
-            <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
-                <div className="flex items-center gap-3 min-w-0 flex-1 mr-3">
-                    <div className="flex flex-col min-w-0">
-                        <h2 className="text-xs font-black text-white truncate max-w-[500px] leading-tight flex items-center gap-2">
-                            <span
-                                className="text-blue-400 flex-shrink-0 hover:text-blue-300 hover:underline transition-colors cursor-pointer"
-                                title="在 Freshdesk 中打开"
-                                onClick={() => {
-                                    const url = `https://simsonn.freshdesk.com/a/tickets/${ticket.externalId}`;
-                                    if (isTauriEnv()) {
-                                        import('@tauri-apps/plugin-opener').then(m => m.openUrl(url)).catch(() => window.open(url, '_blank'));
-                                    } else {
-                                        window.open(url, '_blank');
-                                    }
-                                }}
+            {isMobile ? (
+                /* === 移动端 Header === */
+                <div className="flex-none px-3 py-2 border-b border-slate-700/50 bg-slate-800/40 backdrop-blur-sm z-10">
+                    {/* 第一行：返回 | #externalId | 状态 badge | reprocess */}
+                    <div className="flex items-center gap-2">
+                        {onBack && (
+                            <button onClick={onBack} className="p-1 -ml-1 text-slate-400 hover:text-white transition-colors flex-shrink-0">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                            </button>
+                        )}
+                        <span
+                            className="text-xs font-bold text-blue-400 flex-shrink-0 hover:text-blue-300 transition-colors cursor-pointer"
+                            onClick={() => {
+                                const url = `https://simsonn.freshdesk.com/a/tickets/${ticket.externalId}`;
+                                if (isTauriEnv()) {
+                                    import('@tauri-apps/plugin-opener').then(m => m.openUrl(url)).catch(() => window.open(url, '_blank'));
+                                } else {
+                                    window.open(url, '_blank');
+                                }
+                            }}
+                        >
+                            #{ticket.externalId}
+                        </span>
+                        <span className={`text-[9px] font-bold uppercase tracking-tight px-1.5 py-0.5 rounded-sm ${
+                            ticket.status === 'PENDING_AUDIT' ? 'bg-amber-600/30 text-amber-400' :
+                            ticket.status === 'COMPLETED' || ticket.status === 'APPROVED' ? 'bg-emerald-600/30 text-emerald-400' :
+                            'bg-slate-600/30 text-slate-400'
+                        }`}>
+                            {t(`common:ticketStatus.${ticket.status}` as any)}
+                        </span>
+                        <div className="flex-1" />
+                        {canReprocess && (
+                            <button
+                                onClick={() => setShowReprocessConfirm(true)}
+                                className="px-2 py-1 rounded text-[9px] font-bold border bg-amber-600/20 border-amber-500/40 text-amber-400"
                             >
-                                #{ticket.externalId}
-                            </span>
-                            <span className="text-[9px] text-slate-500 font-mono flex-shrink-0">ID:{ticket.id}</span>
-                            <span className="truncate">
-                                {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}
-                            </span>
-                        </h2>
-                        <div className="flex items-center gap-2">
-                            <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{t(`common:ticketStatus.${ticket.status}` as any)}</span>
-                            {(translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle) && (
-                                <span className="text-[9px] text-slate-600 truncate max-w-[300px]" title={ticket.subject}>{ticket.subject}</span>
-                            )}
+                                {t('detail.reprocessBtn')}
+                            </button>
+                        )}
+                    </div>
+                    {/* 第二行：标题（优先中文翻译） */}
+                    <h2 className="text-xs font-bold text-white truncate mt-1 leading-snug">
+                        {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}
+                    </h2>
+                </div>
+            ) : (
+                /* === 桌面端 Header（保持不变） === */
+                <div className="flex-none p-3 border-b border-slate-700/50 flex items-center justify-between bg-slate-800/40 backdrop-blur-sm z-10">
+                    <div className="flex items-center gap-3 min-w-0 flex-1 mr-3">
+                        <div className="flex flex-col min-w-0">
+                            <h2 className="text-xs font-black text-white truncate max-w-[500px] leading-tight flex items-center gap-2">
+                                <span
+                                    className="text-blue-400 flex-shrink-0 hover:text-blue-300 hover:underline transition-colors cursor-pointer"
+                                    title="在 Freshdesk 中打开"
+                                    onClick={() => {
+                                        const url = `https://simsonn.freshdesk.com/a/tickets/${ticket.externalId}`;
+                                        if (isTauriEnv()) {
+                                            import('@tauri-apps/plugin-opener').then(m => m.openUrl(url)).catch(() => window.open(url, '_blank'));
+                                        } else {
+                                            window.open(url, '_blank');
+                                        }
+                                    }}
+                                >
+                                    #{ticket.externalId}
+                                </span>
+                                <span className="text-[9px] text-slate-500 font-mono flex-shrink-0">ID:{ticket.id}</span>
+                                <span className="truncate">
+                                    {translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle || ticket.subject}
+                                </span>
+                            </h2>
+                            <div className="flex items-center gap-2">
+                                <span className="text-[9px] text-slate-500 font-bold uppercase tracking-tighter">{t(`common:ticketStatus.${ticket.status}` as any)}</span>
+                                {(translationData?.subject || ticket.translation?.translatedTitle || ticket.translatedTitle) && (
+                                    <span className="text-[9px] text-slate-600 truncate max-w-[300px]" title={ticket.subject}>{ticket.subject}</span>
+                                )}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="flex items-center gap-2 flex-shrink-0">
-                    {canReprocess && (
-                        <button
-                            onClick={() => setShowReprocessConfirm(true)}
-                            className="px-3 py-1.5 rounded-md text-[10px] font-black border bg-amber-600/20 border-amber-500/40 text-amber-400 hover:bg-amber-600/30 transition-colors"
-                        >
-                            {t('detail.reprocessBtn')}
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                        {canReprocess && (
+                            <button
+                                onClick={() => setShowReprocessConfirm(true)}
+                                className="px-3 py-1.5 rounded-md text-[10px] font-black border bg-amber-600/20 border-amber-500/40 text-amber-400 hover:bg-amber-600/30 transition-colors"
+                            >
+                                {t('detail.reprocessBtn')}
+                            </button>
+                        )}
+                        <button onClick={() => setIsJsonMode(!isJsonMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isJsonMode ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
+                            JSON
                         </button>
-                    )}
-                    <button onClick={() => setIsJsonMode(!isJsonMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isJsonMode ? 'bg-indigo-600 border-indigo-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
-                        JSON
-                    </button>
-                    <button onClick={() => setIsSplitMode(!isSplitMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isSplitMode ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
-                        {t('detail.splitBtn')}
-                    </button>
+                        <button onClick={() => setIsSplitMode(!isSplitMode)} className={`px-3 py-1.5 rounded-md text-[10px] font-black border ${isSplitMode ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-700 border-slate-600 text-slate-400'}`}>
+                            {t('detail.splitBtn')}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            )}
 
             {/* 视频链接区（仅 VIDEO_REVIEW 类工单） */}
             {ticket.ticketCategory === 'VIDEO_REVIEW' && ticket.videoUrls && (() => {
@@ -321,15 +378,16 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
             })()}
 
             {/* Content Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-6 custom-scrollbar">
-                {isJsonMode ? (
+            <div className={`flex-1 overflow-y-auto ${isMobile ? 'p-3 space-y-4' : 'p-4 space-y-6'} custom-scrollbar ${isMobile && ticket.status === 'PENDING_AUDIT' && ticket.replies?.length ? 'pb-36' : isMobile ? 'pb-16' : ''}`}>
+                {isJsonMode && !isMobile ? (
                     <pre className="text-[10px] text-emerald-400/80 bg-black/40 p-4 rounded-lg border border-slate-800 font-mono whitespace-pre-wrap break-all">
                         {JSON.stringify(ticket, null, 2)}
                     </pre>
                 ) : (
                     <>
-                        <div className="space-y-6 relative">
-                            {isSplitMode && (
+                        <div className={`${isMobile ? 'space-y-4' : 'space-y-6'} relative`}>
+                            {/* 桌面端分栏分割线 */}
+                            {!isMobile && isSplitMode && (
                                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-slate-700/50 to-transparent pointer-events-none"></div>
                             )}
                             {combinedConversations.map((msg, idx) => {
@@ -349,6 +407,39 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                 const existingNote = msg.id > 0 ? notesByConvId.get(msg.id) : null;
                                 const isEditingThis = editingNoteConvId === msg.id;
 
+                                // === 移动端语言翻转模式 ===
+                                if (isMobile) {
+                                    return (
+                                        <div key={idx} className="w-full group/conv">
+                                            <div className="grid grid-cols-1 gap-2 w-full items-start">
+                                                <div className="min-w-0 w-full flex flex-col gap-1.5">
+                                                    {/* 移动端：根据 showTranslation 决定显示原文还是翻译 */}
+                                                    {showTranslation && transMsg ? (
+                                                        renderChatBubble({ ...transMsg, userId: msg.userId, createdAt: msg.createdAt }, isIncoming, true, isDesc)
+                                                    ) : (
+                                                        renderChatBubble(msg, isIncoming, false, isDesc)
+                                                    )}
+
+                                                    {/* 移动端标注区域：只显示已有标注，隐藏"添加标注"按钮 */}
+                                                    {msg.id > 0 && existingNote && !isEditingThis && (
+                                                        <div className={`${isIncoming ? 'pl-1' : 'pr-1'} max-w-[95%] ${isIncoming ? '' : 'self-end'}`}>
+                                                            <div className="px-2 py-1 bg-amber-900/25 border border-amber-500/25 rounded-md">
+                                                                <div className="flex items-center gap-1 mb-0.5">
+                                                                    <span className="text-[8px] font-black uppercase tracking-wider text-amber-500/70">
+                                                                        {existingNote.noteType === 'VIDEO_REVIEW' ? '视频审查' : '标注'}
+                                                                    </span>
+                                                                </div>
+                                                                <p className="text-[11px] text-amber-200/80 leading-relaxed whitespace-pre-wrap">{existingNote.noteContent}</p>
+                                                            </div>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                }
+
+                                // === 桌面端：保持原有逻辑不变 ===
                                 return (
                                     <div key={idx} className="w-full group/conv">
                                         <div className={`grid ${isSplitMode ? 'grid-cols-2 gap-16' : 'grid-cols-1 gap-3'} w-full items-start`}>
@@ -466,6 +557,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                     submitting={auditSubmitting}
                                     onSubmitAudit={handleSubmitAudit}
                                     onRefresh={onRefresh}
+                                    hideAuditUI={isMobile && ticket.status === 'PENDING_AUDIT'}
                                 />
                             </div>
                         )}
@@ -477,6 +569,79 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                     </>
                 )}
             </div>
+
+            {/* 移动端悬浮语言切换按钮 */}
+            {isMobile && translationData && (
+                <button
+                    onClick={() => setShowTranslation(!showTranslation)}
+                    className={`fixed right-4 w-12 h-12 rounded-full bg-indigo-600 text-white shadow-lg z-40 flex items-center justify-center text-sm font-bold active:scale-95 transition-transform ${
+                      ticket.status === 'PENDING_AUDIT' && ticket.replies && ticket.replies.length > 0 ? 'bottom-36' : 'bottom-24'
+                    }`}
+                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                >
+                    {showTranslation ? 'EN' : '中'}
+                </button>
+            )}
+
+            {/* 移动端底部审核操作栏 */}
+            {isMobile && ticket.status === 'PENDING_AUDIT' && ticket.replies && ticket.replies.length > 0 && (() => {
+                const latestReplyId = ticket.replies[ticket.replies.length - 1].id;
+                return (
+                    <div className="fixed bottom-14 left-0 right-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-700/50 z-30">
+                        {mobileRejectExpanded ? (
+                            /* 驳回原因输入 */
+                            <div className="p-3 space-y-2">
+                                <div className="flex items-center justify-between">
+                                    <span className="text-xs font-bold text-red-400">驳回原因</span>
+                                    <button
+                                        onClick={() => { setMobileRejectExpanded(false); setMobileRejectRemark(''); }}
+                                        className="text-xs text-slate-500"
+                                    >
+                                        取消
+                                    </button>
+                                </div>
+                                <textarea
+                                    value={mobileRejectRemark}
+                                    onChange={e => setMobileRejectRemark(e.target.value)}
+                                    placeholder="请输入驳回原因..."
+                                    className="w-full bg-black/30 border border-slate-600 rounded-lg p-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-red-500 outline-none resize-none"
+                                    style={{ minHeight: '60px' }}
+                                    autoFocus
+                                />
+                                <button
+                                    onClick={() => {
+                                        handleSubmitAudit({ replyId: latestReplyId, result: 'REJECT', remark: mobileRejectRemark });
+                                        setMobileRejectExpanded(false);
+                                        setMobileRejectRemark('');
+                                    }}
+                                    disabled={auditSubmitting || !mobileRejectRemark.trim()}
+                                    className="w-full h-11 bg-red-600 hover:bg-red-500 disabled:opacity-50 text-white text-sm font-bold rounded-lg transition-all"
+                                >
+                                    {auditSubmitting ? '提交中...' : '确认驳回'}
+                                </button>
+                            </div>
+                        ) : (
+                            /* 通过 / 驳回 按钮组 */
+                            <div className="flex gap-3 p-3">
+                                <button
+                                    onClick={() => handleSubmitAudit({ replyId: latestReplyId, result: 'PASS', remark: '' })}
+                                    disabled={auditSubmitting}
+                                    className="flex-[3] h-12 bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-base font-bold rounded-lg transition-all flex items-center justify-center gap-1.5"
+                                >
+                                    {auditSubmitting ? '提交中...' : '通过'}
+                                </button>
+                                <button
+                                    onClick={() => setMobileRejectExpanded(true)}
+                                    disabled={auditSubmitting}
+                                    className="flex-[2] h-12 bg-red-600/80 hover:bg-red-600 disabled:opacity-50 text-white text-base font-bold rounded-lg transition-all flex items-center justify-center gap-1.5"
+                                >
+                                    驳回
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                );
+            })()}
 
             {/* 重新处理确认对话框 */}
             {showReprocessConfirm && (
