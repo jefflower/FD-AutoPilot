@@ -458,24 +458,93 @@ pub async fn capability_test_handler(
         });
     }
 
-    // Run all checks concurrently
-    let (python_which, python_version, notebooklm_import, notebooklm_cli_which, path_env) = tokio::join!(
-        run_check("python3 路径", "which", &["-a", "python3"]),
-        run_check("python3 版本", "python3", &["--version"]),
-        run_check("notebooklm 包", "python3", &["-c", "import notebooklm; print(notebooklm.__version__)"]),
-        run_check("notebooklm CLI", "which", &["-a", "notebooklm"]),
-        // Get PATH via a shell so env var is expanded
+    // 扫描所有可能的 python3 路径（Tauri PATH 极简，需要主动找）
+    let python_candidates = [
+        "/opt/homebrew/bin/python3",  // brew Apple Silicon
+        "/usr/local/bin/python3",      // brew Intel
+        "/usr/bin/python3",            // macOS 自带
+        "python3",                     // PATH 内
+    ];
+
+    // 找到最佳 python（优先装了 notebooklm 的高版本）
+    let mut best_python = "python3".to_string();
+    let mut python_detail = "未找到".to_string();
+    let mut python_found = false;
+    for candidate in &python_candidates {
+        let c = candidate.to_string();
+        if let Ok(output) = tokio::task::spawn_blocking({
+            let c = c.clone();
+            move || Command::new(&c).arg("--version").output()
+        }).await {
+            if let Ok(out) = output {
+                if out.status.success() {
+                    let ver = String::from_utf8_lossy(&out.stdout).trim().to_string();
+                    if !python_found {
+                        best_python = c.clone();
+                        python_detail = format!("{} ({})", c, ver);
+                        python_found = true;
+                    }
+                    // 优先选装了 notebooklm 的
+                    if let Ok(check_out) = Command::new(&c)
+                        .args(["-c", "import notebooklm; print(notebooklm.__version__)"])
+                        .output()
+                    {
+                        if check_out.status.success() {
+                            best_python = c.clone();
+                            let nbklm_ver = String::from_utf8_lossy(&check_out.stdout).trim().to_string();
+                            python_detail = format!("{} ({}, notebooklm {})", c, ver, nbklm_ver);
+                            break; // 找到最佳
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 用最佳 python 执行各项检查
+    let bp = best_python.clone();
+    let bp2 = best_python.clone();
+    let (notebooklm_import, notebooklm_cli, path_env) = tokio::join!(
+        run_check("notebooklm 包", &bp, &["-c", "import notebooklm; print(notebooklm.__version__)"]),
+        run_check("notebooklm CLI", "sh", &["-c", "which notebooklm || ls /opt/homebrew/bin/notebooklm /usr/local/bin/notebooklm 2>/dev/null || echo '未找到'"]),
         run_check("PATH 环境变量", "sh", &["-c", "echo $PATH"]),
     );
 
-    let checks = vec![python_which, python_version, notebooklm_import, notebooklm_cli_which, path_env];
+    // Python 版本检查（>= 3.10）
+    let python_version_check = {
+        let ver_str = python_detail.clone();
+        // 提取版本号
+        let version_ok = ver_str.contains("3.1") && !ver_str.contains("3.1 ") && !ver_str.contains("3.1."); // 3.10+
+        let version_ok = version_ok || ver_str.contains("3.10") || ver_str.contains("3.11") || ver_str.contains("3.12") || ver_str.contains("3.13") || ver_str.contains("3.14");
+        super::types::CapTestCheck {
+            name: "Python 版本 (需 ≥3.10)".to_string(),
+            passed: version_ok,
+            detail: python_detail.clone(),
+        }
+    };
+
+    // 实际使用的 python 路径
+    let actual_python_check = super::types::CapTestCheck {
+        name: "实际使用的 Python".to_string(),
+        passed: python_found,
+        detail: if python_found {
+            // 调用 crate::ai::find_python3 会创建循环依赖，直接报告 best_python
+            format!("{} (fd-client 运行时会自动扫描并使用此路径)", bp2)
+        } else {
+            "未找到任何 Python3".to_string()
+        },
+    };
+
+    let checks = vec![actual_python_check, python_version_check, notebooklm_import, notebooklm_cli, path_env];
     let passed = checks.iter().filter(|c| c.passed).count();
     let total = checks.len();
     let summary = format!("{}/{} 项通过", passed, total);
 
     // Generate actionable error message
-    let error = if !checks[2].passed {
-        Some("notebooklm 包未安装，请执行: pip install notebooklm".to_string())
+    let error = if !checks[1].passed {
+        Some("Python 版本过低，notebooklm 需要 Python ≥ 3.10。请安装: brew install python@3.13，然后重新 pip install notebooklm".to_string())
+    } else if !checks[2].passed {
+        Some(format!("notebooklm 包未安装，请执行: {} -m pip install notebooklm", best_python))
     } else if !checks[0].passed {
         Some("python3 未找到，请确认已安装 Python 3".to_string())
     } else {

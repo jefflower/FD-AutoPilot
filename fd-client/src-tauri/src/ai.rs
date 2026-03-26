@@ -4,7 +4,8 @@ use std::process::Command;
 use tokio::time::{timeout, Duration};
 
 /// 查找装有 notebooklm 包的 python 命令（启动时检测一次，缓存结果）
-/// 先尝试常见命令名，再通过 `which -a` 动态发现所有 python 可执行文件
+/// Tauri app 的 PATH 通常极简（/usr/bin:/bin:/usr/sbin:/sbin），
+/// 需要主动扫描 brew、pyenv、系统 framework 等常见安装路径。
 fn find_python3() -> &'static str {
     use std::sync::OnceLock;
     static PYTHON: OnceLock<String> = OnceLock::new();
@@ -13,6 +14,32 @@ fn find_python3() -> &'static str {
             "python3".into(),
             "python".into(),
         ];
+        // Homebrew（Apple Silicon + Intel）
+        let brew_paths = [
+            "/opt/homebrew/bin/python3",
+            "/opt/homebrew/bin/python",
+            "/usr/local/bin/python3",
+            "/usr/local/bin/python",
+        ];
+        for p in brew_paths {
+            if std::path::Path::new(p).exists() && !candidates.contains(&p.to_string()) {
+                candidates.push(p.to_string());
+            }
+        }
+        // Python framework（macOS pkg installer）
+        for ver in ["3.13", "3.12", "3.11", "3.10"] {
+            let p = format!("/Library/Frameworks/Python.framework/Versions/{}/bin/python3", ver);
+            if std::path::Path::new(&p).exists() && !candidates.contains(&p) {
+                candidates.push(p);
+            }
+        }
+        // pyenv
+        if let Ok(home) = std::env::var("HOME") {
+            let pyenv_shim = format!("{}/.pyenv/shims/python3", home);
+            if std::path::Path::new(&pyenv_shim).exists() && !candidates.contains(&pyenv_shim) {
+                candidates.push(pyenv_shim);
+            }
+        }
         // 动态发现系统中所有 python3/python 路径
         for base in ["python3", "python"] {
             if let Ok(output) = Command::new("which").arg("-a").arg(base).output() {
@@ -27,6 +54,7 @@ fn find_python3() -> &'static str {
                 }
             }
         }
+        rlog_info!("[AI] Python candidates: {:?}", candidates);
         for cmd in &candidates {
             if let Ok(output) = Command::new(cmd)
                 .args(["-c", "import notebooklm; print('ok')"])
@@ -45,6 +73,7 @@ fn find_python3() -> &'static str {
 
 
 /// 查找 notebooklm CLI 命令的完整路径（Tauri app 的 PATH 可能不完整）
+/// 返回 "PYTHON_MODULE:{python_path}" 表示用 python -m notebooklm 方式执行
 fn find_notebooklm() -> &'static str {
     use std::sync::OnceLock;
     static NBKLM: OnceLock<String> = OnceLock::new();
@@ -69,11 +98,15 @@ fn find_notebooklm() -> &'static str {
                 }
             }
         }
-        // 常见安装路径
+        // 常见安装路径（含 brew、pip --user、Python framework）
         let common_paths = [
             "/usr/local/bin/notebooklm",
             "/opt/homebrew/bin/notebooklm",
             "/Library/Frameworks/Python.framework/Versions/Current/bin/notebooklm",
+            "/Library/Frameworks/Python.framework/Versions/3.13/bin/notebooklm",
+            "/Library/Frameworks/Python.framework/Versions/3.12/bin/notebooklm",
+            "/Library/Frameworks/Python.framework/Versions/3.11/bin/notebooklm",
+            "/Library/Frameworks/Python.framework/Versions/3.10/bin/notebooklm",
         ];
         for p in common_paths {
             if std::path::Path::new(p).exists() {
@@ -81,12 +114,26 @@ fn find_notebooklm() -> &'static str {
                 return p.to_string();
             }
         }
-        // 最后尝试用 python -m 方式
+        // 用 python3 的 scripts 目录查找
         let python = find_python3();
+        if let Ok(output) = Command::new(python)
+            .args(["-c", "import sysconfig; print(sysconfig.get_path('scripts'))"])
+            .output()
+        {
+            if output.status.success() {
+                let scripts_dir = String::from_utf8_lossy(&output.stdout).trim().to_string();
+                let cli_path = format!("{}/notebooklm", scripts_dir);
+                if std::path::Path::new(&cli_path).exists() {
+                    rlog_info!("[AI] Found notebooklm via sysconfig scripts: {}", cli_path);
+                    return cli_path;
+                }
+            }
+        }
+        // 最终备选：用 python -m notebooklm 方式
         if let Ok(output) = Command::new(python).args(["-c", "import notebooklm; print('ok')"]).output() {
             if output.status.success() {
-                // 用 python -m notebooklm 作为替代
-                rlog_info!("[AI] notebooklm CLI not found, will use python -m fallback");
+                rlog_info!("[AI] notebooklm CLI not found, will use python -m fallback via {}", python);
+                return format!("PYTHON_MODULE:{}", python);
             }
         }
         rlog_info!("[AI] notebooklm not found anywhere, fallback to 'notebooklm'");
@@ -759,9 +806,18 @@ pub async fn execute_notebooklm_cli(
     let args_clone = args.clone();
     let notebooklm_cmd = find_notebooklm().to_string();
     let output = timeout(cli_timeout, tokio::task::spawn_blocking(move || {
-        Command::new(&notebooklm_cmd)
-            .args(&args_clone)
-            .output()
+        if let Some(python) = notebooklm_cmd.strip_prefix("PYTHON_MODULE:") {
+            // python -m notebooklm <args>
+            Command::new(python)
+                .arg("-m")
+                .arg("notebooklm")
+                .args(&args_clone)
+                .output()
+        } else {
+            Command::new(&notebooklm_cmd)
+                .args(&args_clone)
+                .output()
+        }
     }))
     .await
     .map_err(|_| format!("notebooklm CLI timed out after {}s", timeout_secs))?
