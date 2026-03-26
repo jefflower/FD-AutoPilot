@@ -60,11 +60,20 @@ export class LlmApiExecutor implements AgentExecutor {
         return {};
     }
 
+    /** 过滤掉空值（空字符串、null、undefined），避免覆盖上层配置 */
+    private filterEmpty(obj: Record<string, any>): Record<string, any> {
+        const result: Record<string, any> = {};
+        for (const [k, v] of Object.entries(obj)) {
+            if (v !== null && v !== undefined && v !== '') result[k] = v;
+        }
+        return result;
+    }
+
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {
-        // 四级合并：DEFAULTS < capabilityConfig < agentConfig < input.params
+        // 四级合并：DEFAULTS < capabilityConfig < agentConfig < input.params（过滤空值）
         const capConfig = this.getCapabilityConfig(definition);
-        const agentConfig = parseAgentConfig(definition.agentConfig);
-        const mergedParams = input.params || {};
+        const agentConfig = this.filterEmpty(parseAgentConfig(definition.agentConfig));
+        const mergedParams = this.filterEmpty(input.params || {});
         const config: Record<string, any> = { ...DEFAULTS, ...capConfig, ...agentConfig, ...mergedParams };
         const startTime = Date.now();
 
@@ -138,8 +147,8 @@ export class LlmApiExecutor implements AgentExecutor {
 
     async *executeStream(definition: AgentDefinition, input: AgentExecuteInput): AsyncGenerator<AgentStreamChunk> {
         const capConfig = this.getCapabilityConfig(definition);
-        const agentConfig = parseAgentConfig(definition.agentConfig);
-        const mergedParams = input.params || {};
+        const agentConfig = this.filterEmpty(parseAgentConfig(definition.agentConfig));
+        const mergedParams = this.filterEmpty(input.params || {});
         const config: Record<string, any> = { ...DEFAULTS, ...capConfig, ...agentConfig, ...mergedParams };
 
         const { baseUrl, apiKey, model, maxTokens, temperature } = config;
