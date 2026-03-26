@@ -44,6 +44,56 @@ fn find_python3() -> &'static str {
 }
 
 
+/// 查找 notebooklm CLI 命令的完整路径（Tauri app 的 PATH 可能不完整）
+fn find_notebooklm() -> &'static str {
+    use std::sync::OnceLock;
+    static NBKLM: OnceLock<String> = OnceLock::new();
+    NBKLM.get_or_init(|| {
+        // 先直接尝试
+        if let Ok(output) = Command::new("notebooklm").arg("--help").output() {
+            if output.status.success() || output.status.code() == Some(0) {
+                rlog_info!("[AI] Found notebooklm in PATH");
+                return "notebooklm".to_string();
+            }
+        }
+        // 通过 which -a 查找
+        if let Ok(output) = Command::new("which").arg("-a").arg("notebooklm").output() {
+            if output.status.success() {
+                let paths = String::from_utf8_lossy(&output.stdout);
+                for path in paths.lines() {
+                    let p = path.trim().to_string();
+                    if !p.is_empty() {
+                        rlog_info!("[AI] Found notebooklm at: {}", p);
+                        return p;
+                    }
+                }
+            }
+        }
+        // 常见安装路径
+        let common_paths = [
+            "/usr/local/bin/notebooklm",
+            "/opt/homebrew/bin/notebooklm",
+            "/Library/Frameworks/Python.framework/Versions/Current/bin/notebooklm",
+        ];
+        for p in common_paths {
+            if std::path::Path::new(p).exists() {
+                rlog_info!("[AI] Found notebooklm at common path: {}", p);
+                return p.to_string();
+            }
+        }
+        // 最后尝试用 python -m 方式
+        let python = find_python3();
+        if let Ok(output) = Command::new(python).args(["-c", "import notebooklm; print('ok')"]).output() {
+            if output.status.success() {
+                // 用 python -m notebooklm 作为替代
+                rlog_info!("[AI] notebooklm CLI not found, will use python -m fallback");
+            }
+        }
+        rlog_info!("[AI] notebooklm not found anywhere, fallback to 'notebooklm'");
+        "notebooklm".to_string()
+    })
+}
+
 /// 日志抽象 trait，让核心 AI 函数不依赖 Tauri AppHandle
 pub trait GeminiLogger: Send + Sync {
     fn log(&self, msg: &str);
@@ -707,8 +757,9 @@ pub async fn execute_notebooklm_cli(
 
     let cli_timeout = Duration::from_secs(timeout_secs);
     let args_clone = args.clone();
+    let notebooklm_cmd = find_notebooklm().to_string();
     let output = timeout(cli_timeout, tokio::task::spawn_blocking(move || {
-        Command::new("notebooklm")
+        Command::new(&notebooklm_cmd)
             .args(&args_clone)
             .output()
     }))
