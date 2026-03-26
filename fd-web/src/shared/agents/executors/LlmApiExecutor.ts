@@ -101,6 +101,8 @@ export class LlmApiExecutor implements AgentExecutor {
             messages.push({ role: 'user', content: prompt });
 
             console.log(`[LlmApiExecutor] ${definition.code}: model=${model}, baseUrl=${baseUrl}, prompt length=${prompt.length}`);
+            console.log(`[LlmApiExecutor] Config merge detail — capConfig.model=${capConfig.model}, agentConfig.model=${agentConfig.model}, params.model=${mergedParams.model}, final.model=${model}`);
+            console.log(`[LlmApiExecutor] Full config keys:`, Object.keys(config), 'agentConfig raw:', JSON.stringify(parseAgentConfig(definition.agentConfig)));
 
             // 标准化 baseUrl（去除末尾斜杠，确保路径正确）
             const normalizedUrl = normalizeBaseUrl(baseUrl);
