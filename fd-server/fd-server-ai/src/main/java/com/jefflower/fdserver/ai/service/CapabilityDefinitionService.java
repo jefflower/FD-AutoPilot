@@ -70,13 +70,14 @@ public class CapabilityDefinitionService {
         CapabilityDefinition existing = repository.findById(id)
                 .orElseThrow(() -> new BusinessException(ErrorCode.CAPABILITY_NOT_FOUND));
 
-        existing.setName(cap.getName());
-        existing.setDescription(cap.getDescription());
-        existing.setProviderType(cap.getProviderType());
-        existing.setDetectConfig(cap.getDetectConfig());
-        existing.setInstallGuide(cap.getInstallGuide());
-        existing.setExecutionEnv(cap.getExecutionEnv());
-        existing.setSortOrder(cap.getSortOrder());
+        // 仅更新非 null 字段（支持部分更新）
+        if (cap.getName() != null) existing.setName(cap.getName());
+        if (cap.getDescription() != null) existing.setDescription(cap.getDescription());
+        if (cap.getProviderType() != null) existing.setProviderType(cap.getProviderType());
+        if (cap.getDetectConfig() != null) existing.setDetectConfig(cap.getDetectConfig());
+        if (cap.getInstallGuide() != null) existing.setInstallGuide(cap.getInstallGuide());
+        if (cap.getExecutionEnv() != null) existing.setExecutionEnv(cap.getExecutionEnv());
+        if (cap.getSortOrder() != 0) existing.setSortOrder(cap.getSortOrder());
         // code 和 builtIn 不允许修改
 
         return repository.save(existing);
