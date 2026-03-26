@@ -25,6 +25,7 @@ const PROVIDER_TYPE_LABELS: Record<string, { label: string; color: string }> = {
     SHADOW_WINDOW: { label: 'Shadow Window', color: 'bg-purple-500/20 text-purple-400' },
     WEB_AUTOMATION: { label: 'Web Automation', color: 'bg-purple-500/20 text-purple-400' },
     LOCAL_CLI: { label: 'CLI', color: 'bg-green-500/20 text-green-400' },
+    LLM_API: { label: 'LLM API', color: 'bg-cyan-500/20 text-cyan-400' },
 };
 
 const ENV_LABELS: Record<string, string> = {

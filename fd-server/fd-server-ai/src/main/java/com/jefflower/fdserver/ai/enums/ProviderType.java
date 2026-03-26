@@ -10,6 +10,7 @@ public enum ProviderType {
     ANTIGRAVITY_TOOLS,   // Antigravity Tools 本地 AI 代理（OpenAI 兼容 API）
     NOTEBOOKLM_RAG,      // NotebookLM RAG 模式（加 source → 提问 → 清理）
     LOCAL_FUNCTION,      // 本地函数
+    LLM_API,             // 客户端 LLM API 调用（OpenAI 兼容格式：DeepSeek/Qwen/硅基流动/Ollama 等）
 
     // --- 以下为保留的旧值（向后兼容） ---
     @Deprecated LOCAL_CLI,         // → GEMINI_CLI

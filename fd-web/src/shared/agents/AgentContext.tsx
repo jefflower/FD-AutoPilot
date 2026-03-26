@@ -6,6 +6,7 @@ import { NotebookLmRagExecutor } from './executors/NotebookLmRagExecutor';
 import { ClaudeCliExecutor } from './executors/ClaudeCliExecutor';
 import { ShadowWindowExecutor } from './executors/ShadowWindowExecutor';
 import { AntigravityToolsExecutor } from './executors/AntigravityToolsExecutor';
+import { LlmApiExecutor } from './executors/LlmApiExecutor';
 import { registerClient, startHeartbeat, dispatchAgentChanged } from '../services/clientRegistration';
 import { hasExecutionCapability, detectCapabilities } from '../../tauri/bridge';
 import type { CapabilityDetectResult, SkillInfo } from '../../tauri/bridge';
@@ -182,6 +183,7 @@ export const AgentProvider: React.FC<{ children: React.ReactNode }> = ({ childre
                 registry.registerExecutor(new NotebookLmRagExecutor());
                 registry.registerExecutor(new ShadowWindowExecutor());
                 registry.registerExecutor(new AntigravityToolsExecutor());
+                registry.registerExecutor(new LlmApiExecutor());
             }
 
             // 3. 加载 Agent 定义（所有环境都需要，用于 UI 展示，始终从服务端获取最新）
