@@ -56,7 +56,8 @@
     "AUDITING": "审核中",
     "APPROVED": "待推送",
     "MANUAL_REQUIRED": "需人工处理",
-    "COMPLETED": "已完成"
+    "COMPLETED": "已完成",
+    "SKIPPED": "无需处理"
   },
   "userStatus": {
     "PENDING": "待审核",

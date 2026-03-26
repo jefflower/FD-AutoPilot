@@ -281,6 +281,10 @@ public class TicketService {
                 // 驳回至重新翻译 → PENDING_TRANS，n8n 下次扫描 pending 时重新翻译
                 stateMachine.transition(ticket, TicketStatus.PENDING_TRANS);
             }
+            case SKIP -> {
+                // 无需处理 → SKIPPED，不推送到 Freshdesk
+                stateMachine.transition(ticket, TicketStatus.SKIPPED);
+            }
         }
         ticketRepository.save(ticket);
 
@@ -320,6 +324,23 @@ public class TicketService {
         ticketRepository.save(ticket);
 
         notifyService.notifyReplyPushed(ticket);
+    }
+
+    /**
+     * 跳过工单（无需处理）— 仅允许 APPROVED 状态的工单，将其标记为 SKIPPED。
+     * 用于推送页面决定该工单无需推送到 Freshdesk 的场景。
+     */
+    @Transactional
+    public void skipTicket(Long ticketId) {
+        Ticket ticket = getTicketByIdSimple(ticketId);
+        if (ticket.getStatus() != TicketStatus.APPROVED) {
+            throw new BusinessException(ErrorCode.INVALID_STATUS_TRANSITION,
+                    String.format("跳过操作要求工单状态为 APPROVED，当前状态: %s", ticket.getStatus()));
+        }
+        TicketStatus from = ticket.getStatus();
+        stateMachine.transition(ticket, TicketStatus.SKIPPED);
+        ticketRepository.save(ticket);
+        log.info("[TicketService] 工单 #{} 已标记为无需处理 (SKIPPED), 原状态: {}", ticketId, from);
     }
 
     @Transactional

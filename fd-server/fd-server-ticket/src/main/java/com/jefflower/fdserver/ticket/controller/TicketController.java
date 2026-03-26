@@ -205,6 +205,15 @@ public class TicketController {
         return ResponseEntity.ok(ApiResponse.ok("回复已推送到 Freshdesk", null));
     }
 
+    @Operation(summary = "跳过工单（无需处理）", description = "将已审核通过（APPROVED）的工单标记为无需处理（SKIPPED），不推送到 Freshdesk")
+    @PostMapping("/{id}/skip")
+    @RequiresPermission("ticket:audit")
+    public ResponseEntity<ApiResponse<Void>> skipTicket(
+            @Parameter(description = "工单 ID") @PathVariable Long id) {
+        ticketService.skipTicket(id);
+        return ResponseEntity.ok(ApiResponse.ok("工单已标记为无需处理", null));
+    }
+
     @Operation(summary = "批量推送回复", description = "批量将多个已审核通过（APPROVED）工单的回复推送到 Freshdesk")
     @PostMapping("/batch-push")
     @RequiresPermission("ticket:push")

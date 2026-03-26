@@ -88,6 +88,8 @@ const ApprovedTasksTab: React.FC = () => {
         }
     };
 
+    const [skipping, setSkipping] = useState<number | null>(null);
+
     const handlePushSingle = async (ticketId: number) => {
         setPushing(ticketId);
         try {
@@ -97,6 +99,18 @@ const ApprovedTasksTab: React.FC = () => {
             alert(t('approved.pushFailed', { error: (err as Error).message }));
         } finally {
             setPushing(null);
+        }
+    };
+
+    const handleSkipSingle = async (ticketId: number) => {
+        setSkipping(ticketId);
+        try {
+            await serverApi.ticket.skipTicket(ticketId);
+            loadData(true);
+        } catch (err) {
+            alert(t('approved.skipFailed', { error: (err as Error).message, defaultValue: `跳过失败: ${(err as Error).message}` }));
+        } finally {
+            setSkipping(null);
         }
     };
 
@@ -195,15 +209,23 @@ const ApprovedTasksTab: React.FC = () => {
                             onSelectionChange={setSelectedTicketIds}
                             renderActions={(ticket) => (
                                 <>
-                                    {pushing !== ticket.id && (
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); handlePushSingle(ticket.id); }}
-                                            className="px-1.5 py-0.5 bg-emerald-600/60 hover:bg-emerald-500 text-white text-[9px] font-bold rounded transition-all"
-                                        >
-                                            {t('approved.push')}
-                                        </button>
+                                    {pushing !== ticket.id && skipping !== ticket.id && (
+                                        <>
+                                            <button
+                                                onClick={(e) => { e.stopPropagation(); handlePushSingle(ticket.id); }}
+                                                className="px-1.5 py-0.5 bg-emerald-600/60 hover:bg-emerald-500 text-white text-[9px] font-bold rounded transition-all"
+                                            >
+                                                {t('approved.push')}
+                                            </button>
+                                            <button
+                                                onClick={(e) => { e.stopPropagation(); handleSkipSingle(ticket.id); }}
+                                                className="px-1.5 py-0.5 bg-slate-600/60 hover:bg-slate-500 text-slate-200 text-[9px] font-bold rounded transition-all"
+                                            >
+                                                {t('approved.skip', { defaultValue: '无需处理' })}
+                                            </button>
+                                        </>
                                     )}
-                                    {pushing === ticket.id && (
+                                    {(pushing === ticket.id || skipping === ticket.id) && (
                                         <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></div>
                                     )}
                                 </>

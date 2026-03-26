@@ -317,8 +317,8 @@ public class FreshdeskSyncService {
             return false;
         }
 
-        // COMPLETED + 内容已变化（hash 不同，因为相同 hash 在上面已经 SKIPPED）
-        return currentStatus == TicketStatus.COMPLETED;
+        // COMPLETED / SKIPPED + 内容已变化（hash 不同，因为相同 hash 在上面已经 SKIPPED）
+        return currentStatus == TicketStatus.COMPLETED || currentStatus == TicketStatus.SKIPPED;
     }
 
     // ========== 内容构建 ==========

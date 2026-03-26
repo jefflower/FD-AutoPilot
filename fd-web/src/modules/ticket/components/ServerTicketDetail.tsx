@@ -195,7 +195,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
         }
     };
 
-    const handleSubmitAudit = async (auditData: { replyId: number | null, result: 'PASS' | 'REJECT', remark: string }) => {
+    const handleSubmitAudit = async (auditData: { replyId: number | null, result: 'PASS' | 'REJECT' | 'SKIP', remark: string }) => {
         if (!auditData.replyId || auditSubmitting) return;
         setAuditSubmitting(true);
         try {
@@ -632,7 +632,7 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                 </button>
                             </div>
                         ) : (
-                            /* 通过 / 驳回 按钮组 */
+                            /* 通过 / 驳回 / 无需处理 按钮组 */
                             <div className="flex gap-3 p-3">
                                 <button
                                     onClick={() => handleSubmitAudit({ replyId: latestReplyId, result: 'PASS', remark: '' })}
@@ -647,6 +647,13 @@ const ServerTicketDetail: React.FC<ServerTicketDetailProps> = ({
                                     className="flex-[2] h-12 bg-red-600/80 hover:bg-red-600 disabled:opacity-50 text-white text-base font-bold rounded-lg transition-all flex items-center justify-center gap-1.5"
                                 >
                                     驳回
+                                </button>
+                                <button
+                                    onClick={() => handleSubmitAudit({ replyId: latestReplyId, result: 'SKIP', remark: '' })}
+                                    disabled={auditSubmitting}
+                                    className="flex-[2] h-12 bg-slate-600/80 hover:bg-slate-600 disabled:opacity-50 text-slate-200 text-base font-bold rounded-lg transition-all flex items-center justify-center gap-1.5"
+                                >
+                                    跳过
                                 </button>
                             </div>
                         )}

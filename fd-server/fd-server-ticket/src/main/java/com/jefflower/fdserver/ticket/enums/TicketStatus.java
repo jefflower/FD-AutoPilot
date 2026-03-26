@@ -10,7 +10,8 @@ public enum TicketStatus {
     AUDITING,         // 审核中
     APPROVED,         // 待推送
     MANUAL_REQUIRED,  // 需人工处理
-    COMPLETED;        // 已完成
+    COMPLETED,        // 已完成
+    SKIPPED;          // 无需处理（终态，可被数据同步重激活）
 
     /**
      * 字符串转枚举，直接调用 valueOf。

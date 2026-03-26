@@ -29,7 +29,9 @@ import java.util.Set;
  *   <li>审核驳回（重新回复）：PENDING_AUDIT/AUDITING → REPLYING/PROCESSING</li>
  *   <li>审核驳回（重新翻译）：PENDING_AUDIT/AUDITING → PENDING_TRANS</li>
  *   <li>审核通过 + 自动推送：PENDING_AUDIT/AUDITING → COMPLETED</li>
- *   <li>同步重触发：COMPLETED/APPROVED → PENDING_TRANS</li>
+ *   <li>审核跳过（无需处理）：PENDING_AUDIT/AUDITING → SKIPPED</li>
+ *   <li>推送页跳过（无需处理）：APPROVED → SKIPPED</li>
+ *   <li>同步重触发：COMPLETED/APPROVED/SKIPPED → PENDING_TRANS</li>
  *   <li>处理超时回退：PROCESSING/TRANSLATING/PENDING_REPLY/REPLYING → PENDING_TRANS</li>
  * </ul>
  */
@@ -66,6 +68,7 @@ public class TicketStateMachine {
                     TicketStatus.AUDITING,           // 审核人开始审核
                     TicketStatus.APPROVED,           // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,          // 审核通过（自动推送模式）
+                    TicketStatus.SKIPPED,            // 审核跳过（无需处理）
                     TicketStatus.REPLYING,           // 审核驳回 → 重新回复
                     TicketStatus.PROCESSING,         // 兼容：审核驳回 → 重新回复
                     TicketStatus.PENDING_TRANS       // 审核驳回 → 重新翻译
@@ -73,12 +76,14 @@ public class TicketStateMachine {
             Map.entry(TicketStatus.AUDITING, Set.of(
                     TicketStatus.APPROVED,           // 审核通过（手动推送模式）
                     TicketStatus.COMPLETED,          // 审核通过（自动推送模式）
+                    TicketStatus.SKIPPED,            // 审核跳过（无需处理）
                     TicketStatus.REPLYING,           // 审核驳回 → 重新回复
                     TicketStatus.PROCESSING,         // 兼容：审核驳回 → 重新回复
                     TicketStatus.PENDING_TRANS       // 审核驳回 → 重新翻译
             )),
             Map.entry(TicketStatus.APPROVED, Set.of(
                     TicketStatus.COMPLETED,          // 手动推送到 Freshdesk
+                    TicketStatus.SKIPPED,            // 推送页跳过（无需处理）
                     TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
             )),
             Map.entry(TicketStatus.MANUAL_REQUIRED, Set.of(
@@ -89,6 +94,9 @@ public class TicketStateMachine {
             )),
             Map.entry(TicketStatus.COMPLETED, Set.of(
                     TicketStatus.PENDING_TRANS       // 同步发现内容变化，重新触发
+            )),
+            Map.entry(TicketStatus.SKIPPED, Set.of(
+                    TicketStatus.PENDING_TRANS       // 数据同步重激活（与 COMPLETED 同逻辑）
             ))
     );
 

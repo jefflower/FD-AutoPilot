@@ -234,7 +234,7 @@ export interface ReplySubmitData {
 
 export interface AuditSubmitData {
   replyId: number;
-  auditResult: 'PASS' | 'REJECT' | 'RETRANSLATE';
+  auditResult: 'PASS' | 'REJECT' | 'RETRANSLATE' | 'SKIP';
   auditRemark?: string;
 }
 

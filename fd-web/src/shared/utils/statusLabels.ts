@@ -25,11 +25,12 @@ export const TICKET_STATUS_COLORS: Record<string, string> = {
   APPROVED: 'bg-emerald-500/20 text-emerald-500',
   MANUAL_REQUIRED: 'bg-red-500/20 text-red-500',
   COMPLETED: 'bg-green-500/20 text-green-500',
+  SKIPPED: 'bg-slate-500/20 text-slate-400',
 };
 
 const TICKET_STATUSES = [
   'PENDING_TRANS', 'TRANSLATING', 'PENDING_REPLY', 'REPLYING',
-  'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'MANUAL_REQUIRED', 'COMPLETED',
+  'PROCESSING', 'PENDING_AUDIT', 'AUDITING', 'APPROVED', 'MANUAL_REQUIRED', 'COMPLETED', 'SKIPPED',
 ] as const;
 
 // ============ Freshdesk 工单状态映射 ============

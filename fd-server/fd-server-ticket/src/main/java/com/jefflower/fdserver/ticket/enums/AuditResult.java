@@ -3,5 +3,6 @@ package com.jefflower.fdserver.ticket.enums;
 public enum AuditResult {
     PASS,
     REJECT,
-    RETRANSLATE
+    RETRANSLATE,
+    SKIP            // 无需处理
 }

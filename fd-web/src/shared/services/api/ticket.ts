@@ -90,6 +90,10 @@ export const ticketApi = {
     await request<void>(`/tickets/${ticketId}/skip-reply`, { method: 'POST' });
   },
 
+  async skipTicket(ticketId: number): Promise<void> {
+    await request<void>(`/tickets/${ticketId}/skip`, { method: 'POST' });
+  },
+
   async restartWorkflow(id: number): Promise<void> {
     await request<void>(`/tickets/${id}/restart-workflow`, { method: 'POST' });
   },

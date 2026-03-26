@@ -56,7 +56,8 @@
     "AUDITING": "Auditing",
     "APPROVED": "Approved",
     "MANUAL_REQUIRED": "Manual Required",
-    "COMPLETED": "Completed"
+    "COMPLETED": "Completed",
+    "SKIPPED": "Skipped"
   },
   "userStatus": {
     "PENDING": "Pending",

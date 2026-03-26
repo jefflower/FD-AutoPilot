@@ -15,7 +15,7 @@ interface Reply {
 
 interface AuditState {
     replyId: number | null;
-    result: 'PASS' | 'REJECT';
+    result: 'PASS' | 'REJECT' | 'SKIP';
     remark: string;
 }
 
@@ -265,6 +265,12 @@ const ReplyHistoryPanel: React.FC<ReplyHistoryPanelProps> = ({
                                                         className={`flex-1 ${isMobile ? 'py-3 text-sm' : 'py-2 text-xs'} font-bold rounded-lg border transition-all ${auditState.result === 'REJECT' ? 'bg-rose-600 border-rose-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
                                                     >
                                                         {t('history.reject')}
+                                                    </button>
+                                                    <button
+                                                        onClick={() => setAuditState(s => ({ ...s, result: 'SKIP' }))}
+                                                        className={`flex-1 ${isMobile ? 'py-3 text-sm' : 'py-2 text-xs'} font-bold rounded-lg border transition-all ${auditState.result === 'SKIP' ? 'bg-slate-600 border-slate-500 text-white' : 'bg-slate-800 border-slate-700 text-slate-400'}`}
+                                                    >
+                                                        {t('history.skip', '无需处理')}
                                                     </button>
                                                 </div>
                                                 <textarea
