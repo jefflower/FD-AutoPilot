@@ -333,16 +333,13 @@ const CapabilityCard: React.FC<{
     canExecute: boolean;
     skillState?: CapSkillState;
     models?: string[];
-}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, detectResult, detecting, canExecute, skillState, models }) => {
+}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, detectResult: _detectResult, detecting: _detecting, canExecute, skillState, models }) => {
     const { t } = useTranslation(['common']);
     const providerInfo = PROVIDER_TYPE_LABELS[capability.providerType] || {
         label: capability.providerType,
         color: 'bg-slate-500/20 text-slate-400',
     };
     const envLabel = ENV_LABELS[capability.executionEnv] || capability.executionEnv;
-
-    // 需要本地检测的 ProviderType（NotebookLM 等需要保留）
-    const DETECT_PROVIDER_TYPES = ['NOTEBOOKLM_PY', 'NOTEBOOKLM_RAG', 'NOTEBOOKLM', 'ANTIGRAVITY_TOOLS'];
 
     // 渲染环境检测徽章
     const renderDetectBadge = () => {
@@ -355,36 +352,8 @@ const CapabilityCard: React.FC<{
                 </span>
             );
         }
-
-        // 仅对需要检测的类型显示检测徽章
-        if (!canExecute || !DETECT_PROVIDER_TYPES.includes(capability.providerType)) return null;
-
-        if (detecting) {
-            return (
-                <span className="px-2 py-0.5 rounded bg-slate-700/50 text-slate-500 inline-flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse" />
-                    {t('capability.detecting')}
-                </span>
-            );
-        }
-        if (!detectResult) return null;
-        if (detectResult.available) {
-            return (
-                <span className="px-2 py-0.5 rounded bg-green-500/20 text-green-400 inline-flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                    {t('capability.localAvailable', '本地可用')}{detectResult.version ? ` v${detectResult.version}` : ''}
-                </span>
-            );
-        }
-        return (
-            <span
-                className="px-2 py-0.5 rounded bg-red-500/20 text-red-400 inline-flex items-center gap-1 cursor-default"
-                title={detectResult.error || capability.installGuide || undefined}
-            >
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                {t('capability.localUnavailable', '本地不可用')}
-            </span>
-        );
+        // 其他类型不再显示检测徽章
+        return null;
     };
 
     return (
@@ -432,7 +401,7 @@ const CapabilityCard: React.FC<{
             {/* 安装说明（有 installGuide 时始终可查看） */}
             {capability.installGuide && <InstallGuideSection
                 guide={capability.installGuide}
-                isUnavailable={canExecute && detectResult ? !detectResult.available : false}
+                isUnavailable={false}
             />}
 
             {/* AI Skills */}
