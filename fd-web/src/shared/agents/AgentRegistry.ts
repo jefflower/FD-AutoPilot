@@ -100,6 +100,10 @@ export class AgentRegistry {
         return Array.from(this.capabilities.values());
     }
 
+    getCapabilityByCode(code: string): CapabilityDefinition | undefined {
+        return this.capabilities.get(code);
+    }
+
     resolve(code: string): { definition: AgentDefinition; executor: AgentExecutor } | null {
         const definition = this.definitions.get(code);
         if (!definition || !definition.enabled) return null;

@@ -42,6 +42,18 @@ export function useAgent(agentCode: string) {
 
         const { definition, executor } = resolved;
 
+        // LLM_API：从 Capability 的 detectConfig 中注入 API 配置（baseUrl/apiKey/model）
+        if (definition.requiredCapability) {
+            const cap = registry.getCapabilityByCode(definition.requiredCapability);
+            if (cap?.providerType === 'LLM_API' && cap.detectConfig) {
+                try {
+                    const capConfig = JSON.parse(cap.detectConfig);
+                    // Capability 配置作为底层，agentConfig 和 params 可覆盖
+                    input = { ...input, params: { ...capConfig, ...input.params } };
+                } catch { /* ignore parse errors */ }
+            }
+        }
+
         try {
             const execResult = await executor.execute(definition, input);
             setResult(execResult.output);
@@ -114,6 +126,17 @@ export function useAgentStream(agentCode: string) {
         }
 
         const { definition, executor } = resolved;
+
+        // LLM_API：从 Capability 的 detectConfig 中注入 API 配置
+        if (definition.requiredCapability) {
+            const cap = registry.getCapabilityByCode(definition.requiredCapability);
+            if (cap?.providerType === 'LLM_API' && cap.detectConfig) {
+                try {
+                    const capConfig = JSON.parse(cap.detectConfig);
+                    input = { ...input, params: { ...capConfig, ...input.params } };
+                } catch { /* ignore */ }
+            }
+        }
 
         if (!executor.executeStream) {
             const errMsg = `Agent "${agentCode}" 不支持流式执行`;

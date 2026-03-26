@@ -621,9 +621,9 @@ const CreateLlmApiDialog: React.FC<{
                 executionEnv: 'CLIENT_ONLY',
                 configSchema,
                 detectConfig: JSON.stringify({
-                    // LLM API 通过 HTTP 连通性检测
-                    type: 'http',
-                    url: baseUrl.trim(),
+                    baseUrl: baseUrl.trim(),
+                    ...(apiKey.trim() ? { apiKey: apiKey.trim() } : {}),
+                    ...(model.trim() ? { model: model.trim() } : {}),
                 }),
                 enabled: true,
                 builtIn: false,
