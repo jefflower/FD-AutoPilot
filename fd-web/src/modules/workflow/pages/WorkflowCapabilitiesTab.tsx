@@ -78,6 +78,7 @@ const WorkflowCapabilitiesTab: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [toggling, setToggling] = useState<number | null>(null);
     const [confirmDialog, setConfirmDialog] = useState<{ capId: number; capName: string; linkedCount: number } | null>(null);
+    const [showCreateDialog, setShowCreateDialog] = useState(false);
 
     // 在线客户端数据
     const [onlineCountMap, setOnlineCountMap] = useState<Record<string, number>>({});
@@ -241,19 +242,27 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                     <h2 className="text-lg font-medium text-slate-200">{t('capability.title')}</h2>
                     <p className="text-sm text-slate-500 mt-1">{t('capability.description')}</p>
                 </div>
-                {canExecute && (
+                <div className="flex items-center gap-2">
                     <button
-                        onClick={runDetection}
-                        disabled={detecting}
-                        className={`px-3 py-1.5 text-xs rounded border transition-colors ${
-                            detecting
-                                ? 'border-slate-600 text-slate-500 cursor-wait'
-                                : 'border-slate-600 text-slate-400 hover:text-slate-200 hover:border-slate-500'
-                        }`}
+                        onClick={() => setShowCreateDialog(true)}
+                        className="px-3 py-1.5 text-xs rounded border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 transition-colors"
                     >
-                        {detecting ? t('capability.detecting') : t('capability.reDetect')}
+                        + 新增 LLM API
                     </button>
-                )}
+                    {canExecute && (
+                        <button
+                            onClick={runDetection}
+                            disabled={detecting}
+                            className={`px-3 py-1.5 text-xs rounded border transition-colors ${
+                                detecting
+                                    ? 'border-slate-600 text-slate-500 cursor-wait'
+                                    : 'border-slate-600 text-slate-400 hover:text-slate-200 hover:border-slate-500'
+                            }`}
+                        >
+                            {detecting ? t('capability.detecting') : t('capability.reDetect')}
+                        </button>
+                    )}
+                </div>
             </div>
 
             {/* 能力卡片列表 */}
@@ -293,6 +302,19 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                     onCancel={() => setConfirmDialog(null)}
                 />
             )}
+
+            {/* 创建 LLM API 对话框 */}
+            {showCreateDialog && (
+                <CreateLlmApiDialog
+                    onCreated={async () => {
+                        setShowCreateDialog(false);
+                        await loadCapabilities();
+                        await reloadAgentContext();
+                        toast('success', 'LLM API Provider 创建成功');
+                    }}
+                    onCancel={() => setShowCreateDialog(false)}
+                />
+            )}
         </div>
     );
 };
@@ -319,9 +341,23 @@ const CapabilityCard: React.FC<{
     };
     const envLabel = ENV_LABELS[capability.executionEnv] || capability.executionEnv;
 
-    // 渲染环境检测徽章（仅在有本地执行环境时显示）
+    // 需要本地检测的 ProviderType（NotebookLM 等需要保留）
+    const DETECT_PROVIDER_TYPES = ['NOTEBOOKLM_PY', 'NOTEBOOKLM_RAG', 'NOTEBOOKLM', 'ANTIGRAVITY_TOOLS'];
+
+    // 渲染环境检测徽章
     const renderDetectBadge = () => {
-        if (!canExecute) return null;
+        // LLM_API 类型无需本地检测，直接显示"API 就绪"
+        if (capability.providerType === 'LLM_API') {
+            return (
+                <span className="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 inline-flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    API 就绪
+                </span>
+            );
+        }
+
+        // 仅对需要检测的类型显示检测徽章
+        if (!canExecute || !DETECT_PROVIDER_TYPES.includes(capability.providerType)) return null;
 
         if (detecting) {
             return (
@@ -331,10 +367,7 @@ const CapabilityCard: React.FC<{
                 </span>
             );
         }
-        if (!detectResult) {
-            // bridge 不可用或没有该 capability 的检测结果
-            return null;
-        }
+        if (!detectResult) return null;
         if (detectResult.available) {
             return (
                 <span className="px-2 py-0.5 rounded bg-green-500/20 text-green-400 inline-flex items-center gap-1">
@@ -559,6 +592,187 @@ const ConfirmDialog: React.FC<{
                         className="px-4 py-1.5 text-sm bg-red-600 hover:bg-red-500 text-white rounded transition-colors"
                     >
                         {t('confirmDialog.defaultConfirm')}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+/** 创建 LLM API Provider 对话框 */
+const CreateLlmApiDialog: React.FC<{
+    onCreated: () => void;
+    onCancel: () => void;
+}> = ({ onCreated, onCancel }) => {
+    const [code, setCode] = useState('');
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [baseUrl, setBaseUrl] = useState('');
+    const [apiKey, setApiKey] = useState('');
+    const [model, setModel] = useState('');
+    const [submitting, setSubmitting] = useState(false);
+    const [error, setError] = useState('');
+
+    // 预设模板
+    const presets = [
+        { label: 'DeepSeek', code: 'deepseek-api', name: 'DeepSeek API', baseUrl: 'https://api.deepseek.com', model: 'deepseek-chat', desc: 'DeepSeek LLM API（性价比最高）' },
+        { label: '通义千问', code: 'qwen-api', name: 'Qwen API', baseUrl: 'https://dashscope.aliyuncs.com/compatible-mode', model: 'qwen-plus', desc: '阿里云通义千问 API' },
+        { label: '硅基流动', code: 'siliconflow-api', name: 'SiliconFlow API', baseUrl: 'https://api.siliconflow.cn', model: 'deepseek-ai/DeepSeek-V3', desc: '硅基流动聚合 API（多模型）' },
+        { label: 'Ollama', code: 'ollama-local', name: 'Ollama Local', baseUrl: 'http://localhost:11434', model: 'llama3', desc: '本地 Ollama 推理' },
+    ];
+
+    const applyPreset = (preset: typeof presets[0]) => {
+        setCode(preset.code);
+        setName(preset.name);
+        setBaseUrl(preset.baseUrl);
+        setModel(preset.model);
+        setDescription(preset.desc);
+    };
+
+    const handleSubmit = async () => {
+        if (!code.trim() || !name.trim() || !baseUrl.trim()) {
+            setError('请填写 Code、名称和 API 地址');
+            return;
+        }
+        setSubmitting(true);
+        setError('');
+        try {
+            const configSchema = JSON.stringify({
+                baseUrl: { type: 'string', label: 'API Base URL', required: true, description: 'OpenAI 兼容 API 地址' },
+                apiKey: { type: 'string', label: 'API Key', required: true, description: 'API 密钥', secret: true },
+                model: { type: 'string', label: 'Model', required: false, description: '默认模型' },
+                maxTokens: { type: 'number', label: 'Max Tokens', required: false, description: '最大输出 token 数' },
+                temperature: { type: 'number', label: 'Temperature', required: false, description: '生成温度 0-2' },
+            });
+            await capabilityApi.createCapability({
+                code: code.trim(),
+                name: name.trim(),
+                description: description.trim() || `${name.trim()} — OpenAI 兼容 LLM API`,
+                providerType: 'LLM_API',
+                executionEnv: 'CLIENT_ONLY',
+                configSchema,
+                detectConfig: JSON.stringify({
+                    // LLM API 通过 HTTP 连通性检测
+                    type: 'http',
+                    url: baseUrl.trim(),
+                }),
+                enabled: true,
+                builtIn: false,
+                sortOrder: 100,
+            } as any);
+            onCreated();
+        } catch (err: any) {
+            setError(err.message || '创建失败');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onCancel}>
+            <div
+                className="bg-slate-800 border border-slate-700 rounded-lg w-[520px] max-h-[90vh] overflow-y-auto p-6"
+                onClick={e => e.stopPropagation()}
+            >
+                <h3 className="text-slate-200 font-medium mb-4">新增 LLM API Provider</h3>
+
+                {/* 快捷预设 */}
+                <div className="mb-4">
+                    <p className="text-xs text-slate-500 mb-2">快捷预设</p>
+                    <div className="flex flex-wrap gap-2">
+                        {presets.map(p => (
+                            <button
+                                key={p.code}
+                                onClick={() => applyPreset(p)}
+                                className="px-3 py-1.5 text-xs rounded border border-slate-600 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
+                            >
+                                {p.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                {/* 表单 */}
+                <div className="space-y-3">
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">Code <span className="text-red-400">*</span></label>
+                        <input
+                            value={code}
+                            onChange={e => setCode(e.target.value)}
+                            placeholder="如 deepseek-api"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">名称 <span className="text-red-400">*</span></label>
+                        <input
+                            value={name}
+                            onChange={e => setName(e.target.value)}
+                            placeholder="如 DeepSeek API"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">API 地址 <span className="text-red-400">*</span></label>
+                        <input
+                            value={baseUrl}
+                            onChange={e => setBaseUrl(e.target.value)}
+                            placeholder="https://api.deepseek.com"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">API Key</label>
+                        <input
+                            type="password"
+                            value={apiKey}
+                            onChange={e => setApiKey(e.target.value)}
+                            placeholder="sk-..."
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                        <p className="text-[10px] text-slate-600 mt-1">API Key 保存在 Agent 配置中，此处仅用于预填</p>
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">默认模型</label>
+                        <input
+                            value={model}
+                            onChange={e => setModel(e.target.value)}
+                            placeholder="如 deepseek-chat"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">描述</label>
+                        <input
+                            value={description}
+                            onChange={e => setDescription(e.target.value)}
+                            placeholder="简短描述"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50"
+                        />
+                    </div>
+                </div>
+
+                {error && (
+                    <p className="text-sm text-red-400 mt-3">{error}</p>
+                )}
+
+                <div className="flex items-center justify-end gap-3 mt-5">
+                    <button
+                        onClick={onCancel}
+                        className="px-3 py-1.5 text-sm text-slate-400 hover:text-slate-300 transition-colors"
+                    >
+                        取消
+                    </button>
+                    <button
+                        onClick={handleSubmit}
+                        disabled={submitting}
+                        className={`px-4 py-1.5 text-sm rounded transition-colors ${
+                            submitting
+                                ? 'bg-cyan-700 text-cyan-300 cursor-wait'
+                                : 'bg-cyan-600 hover:bg-cyan-500 text-white'
+                        }`}
+                    >
+                        {submitting ? '创建中...' : '创建'}
                     </button>
                 </div>
             </div>
