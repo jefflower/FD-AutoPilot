@@ -424,6 +424,7 @@ const MyAgentsTab: React.FC = () => {
                                 {(() => {
                                     const baseSchema = parseSchema(agent.userConfigSchema);
                                     const capModels = agent.requiredCapability ? modelMap[agent.requiredCapability] : undefined;
+                                    const existingConfig = parseConfig(agent.customConfig);
 
                                     // 动态注入 model 字段（如果 capability 有可用模型）
                                     let schema: ConfigSchema | null = baseSchema;
@@ -438,27 +439,43 @@ const MyAgentsTab: React.FC = () => {
                                         schema = { model: modelField, ...(baseSchema || {}) };
                                     }
 
+                                    // 无 schema 但有已存在的 customConfig：自动生成 schema
+                                    if (!schema && Object.keys(existingConfig).length > 0) {
+                                        const autoSchema: ConfigSchema = {};
+                                        for (const [key, value] of Object.entries(existingConfig)) {
+                                            autoSchema[key] = {
+                                                type: typeof value === 'boolean' ? 'boolean' : typeof value === 'number' ? 'number' : 'string',
+                                                label: key,
+                                                required: false,
+                                            };
+                                        }
+                                        schema = autoSchema;
+                                    }
+
                                     if (!schema) return null;
+
+                                    const onSave = async (configJson: string) => {
+                                        setOperating(agent.agentCode);
+                                        try {
+                                            const updated = await userAgentApi.updateConfig(agent.agentCode, { customConfig: configJson });
+                                            setAgents(prev => prev.map(a => a.agentCode === agent.agentCode
+                                                ? { ...a, customConfig: updated.customConfig } : a));
+                                            await reload();
+                                            toast('success', `${agent.agentName || agent.agentCode} 参数已保存`);
+                                        } catch (err: any) {
+                                            toast('error', err.message || '保存失败');
+                                        } finally {
+                                            setOperating(null);
+                                        }
+                                    };
+
                                     return (
                                         <AgentConfigPanel
                                             agentCode={agent.agentCode}
                                             schema={schema}
-                                            initialConfig={parseConfig(agent.customConfig)}
+                                            initialConfig={existingConfig}
                                             disabled={operating === agent.agentCode}
-                                            onSave={async (configJson) => {
-                                                setOperating(agent.agentCode);
-                                                try {
-                                                    const updated = await userAgentApi.updateConfig(agent.agentCode, { customConfig: configJson });
-                                                    setAgents(prev => prev.map(a => a.agentCode === agent.agentCode
-                                                        ? { ...a, customConfig: updated.customConfig } : a));
-                                                    await reload();
-                                                    toast('success', `${agent.agentName || agent.agentCode} 参数已保存`);
-                                                } catch (err: any) {
-                                                    toast('error', err.message || '保存失败');
-                                                } finally {
-                                                    setOperating(null);
-                                                }
-                                            }}
+                                            onSave={onSave}
                                         />
                                     );
                                 })()}
