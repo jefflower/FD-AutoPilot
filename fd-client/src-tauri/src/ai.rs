@@ -3,6 +3,47 @@ use serde::{Deserialize, Serialize};
 use std::process::Command;
 use tokio::time::{timeout, Duration};
 
+/// 查找装有 notebooklm 包的 python 命令（启动时检测一次，缓存结果）
+/// 先尝试常见命令名，再通过 `which -a` 动态发现所有 python 可执行文件
+fn find_python3() -> &'static str {
+    use std::sync::OnceLock;
+    static PYTHON: OnceLock<String> = OnceLock::new();
+    PYTHON.get_or_init(|| {
+        let mut candidates: Vec<String> = vec![
+            "python3".into(),
+            "python".into(),
+        ];
+        // 动态发现系统中所有 python3/python 路径
+        for base in ["python3", "python"] {
+            if let Ok(output) = Command::new("which").arg("-a").arg(base).output() {
+                if output.status.success() {
+                    let paths = String::from_utf8_lossy(&output.stdout);
+                    for path in paths.lines() {
+                        let p = path.trim().to_string();
+                        if !p.is_empty() && !candidates.contains(&p) {
+                            candidates.push(p);
+                        }
+                    }
+                }
+            }
+        }
+        for cmd in &candidates {
+            if let Ok(output) = Command::new(cmd)
+                .args(["-c", "import notebooklm; print('ok')"])
+                .output()
+            {
+                if output.status.success() {
+                    rlog_info!("[AI] Found python with notebooklm: {}", cmd);
+                    return cmd.clone();
+                }
+            }
+        }
+        rlog_info!("[AI] No python with notebooklm found, fallback to 'python3'");
+        "python3".to_string()
+    })
+}
+
+
 /// 日志抽象 trait，让核心 AI 函数不依赖 Tauri AppHandle
 pub trait GeminiLogger: Send + Sync {
     fn log(&self, msg: &str);
@@ -497,7 +538,7 @@ asyncio.run(main())
     let python_timeout = Duration::from_secs(300);
     let script_clone = python_script.clone();
     let output = timeout(python_timeout, tokio::task::spawn_blocking(move || {
-        Command::new("python3")
+        Command::new(find_python3())
             .arg("-c")
             .arg(&script_clone)
             .output()
