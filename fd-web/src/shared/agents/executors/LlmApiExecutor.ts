@@ -2,6 +2,7 @@ import type { SkillInfo } from '../../../tauri/bridge';
 import type { AgentExecutor } from './types';
 import type { AgentDefinition, AgentExecuteInput, AgentExecuteResult, AgentStreamChunk } from '../../types/server';
 import { parseAgentConfig } from '../schemaUtils';
+import { AgentRegistry } from '../AgentRegistry';
 
 /** LLM API 执行器默认值 */
 const DEFAULTS = {
@@ -35,10 +36,23 @@ export class LlmApiExecutor implements AgentExecutor {
         return [];
     }
 
+    /** 从 Capability 的 detectConfig 读取 API 配置（baseUrl/apiKey/model） */
+    private getCapabilityConfig(definition: AgentDefinition): Record<string, any> {
+        if (!definition.requiredCapability) return {};
+        try {
+            const registry = AgentRegistry.getInstance();
+            const cap = registry.getCapabilityByCode(definition.requiredCapability);
+            if (cap?.detectConfig) return JSON.parse(cap.detectConfig);
+        } catch { /* ignore */ }
+        return {};
+    }
+
     async execute(definition: AgentDefinition, input: AgentExecuteInput): Promise<AgentExecuteResult> {
+        // 四级合并：DEFAULTS < capabilityConfig < agentConfig < input.params
+        const capConfig = this.getCapabilityConfig(definition);
         const agentConfig = parseAgentConfig(definition.agentConfig);
         const mergedParams = input.params || {};
-        const config: Record<string, any> = { ...DEFAULTS, ...agentConfig, ...mergedParams };
+        const config: Record<string, any> = { ...DEFAULTS, ...capConfig, ...agentConfig, ...mergedParams };
         const startTime = Date.now();
 
         try {
@@ -110,9 +124,10 @@ export class LlmApiExecutor implements AgentExecutor {
     }
 
     async *executeStream(definition: AgentDefinition, input: AgentExecuteInput): AsyncGenerator<AgentStreamChunk> {
+        const capConfig = this.getCapabilityConfig(definition);
         const agentConfig = parseAgentConfig(definition.agentConfig);
         const mergedParams = input.params || {};
-        const config: Record<string, any> = { ...DEFAULTS, ...agentConfig, ...mergedParams };
+        const config: Record<string, any> = { ...DEFAULTS, ...capConfig, ...agentConfig, ...mergedParams };
 
         const { baseUrl, apiKey, model, maxTokens, temperature } = config;
 
