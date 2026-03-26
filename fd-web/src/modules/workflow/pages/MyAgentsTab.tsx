@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { RefreshCw, Trash2, Power, Zap, AlertTriangle, Bot, ArrowRight, Settings, ChevronDown, ChevronRight, Save } from 'lucide-react';
-import { userAgentApi } from '../../../shared/services/api/agent';
+import { RefreshCw, Trash2, Power, Zap, AlertTriangle, Bot, ArrowRight, Settings, ChevronDown, ChevronRight, Save, Pencil } from 'lucide-react';
+import { agentApi, userAgentApi } from '../../../shared/services/api/agent';
 import { useAgentContext } from '../../../shared/agents/AgentContext';
 import { useToast } from '../../../shared/hooks/useToast';
-import type { UserAgentConfigDTO } from '../../../shared/types/server';
+import type { UserAgentConfigDTO, AgentDefinition } from '../../../shared/types/server';
+import { AgentEditModal } from '../components/AgentEditModal';
 
 /** Agent 可配置参数的 Schema 项 */
 interface ConfigSchemaField {
@@ -158,7 +159,7 @@ const AgentConfigPanel: React.FC<{
 };
 
 const MyAgentsTab: React.FC = () => {
-    const { reload, capabilityStatus, canExecute, modelMap } = useAgentContext();
+    const { reload, capabilityStatus, canExecute, modelMap, capabilities } = useAgentContext();
     const { toast } = useToast();
 
     const [agents, setAgents] = useState<UserAgentConfigDTO[]>([]);
@@ -166,6 +167,9 @@ const MyAgentsTab: React.FC = () => {
     const [operating, setOperating] = useState<string | null>(null); // agentCode being operated
     // 退订确认弹窗状态：null 表示不显示，否则保存待退订的 agent 信息
     const [unsubConfirm, setUnsubConfirm] = useState<{ agentCode: string; agentName: string } | null>(null);
+    // 编辑弹窗状态
+    const [editingDef, setEditingDef] = useState<Partial<AgentDefinition> | null>(null);
+    const [saving, setSaving] = useState(false);
 
     const fetchAgents = useCallback(async () => {
         try {
@@ -234,6 +238,51 @@ const MyAgentsTab: React.FC = () => {
             toast('error', err.message || '退订失败');
         } finally {
             setOperating(null);
+        }
+    };
+
+    // 编辑 Agent 定义
+    const handleEdit = async (agentCode: string) => {
+        try {
+            const defs = await agentApi.getDefinitions();
+            const def = defs.find(d => d.code === agentCode);
+            if (def) {
+                setEditingDef({ ...def });
+            } else {
+                toast('error', '找不到 Agent 定义');
+            }
+        } catch (err: any) {
+            toast('error', '加载 Agent 定义失败: ' + (err.message || '未知错误'));
+        }
+    };
+
+    const handleSaveDef = async () => {
+        if (!editingDef) return;
+        setSaving(true);
+        try {
+            const payload: any = { ...editingDef };
+            if (typeof payload.agentConfig === 'object' && payload.agentConfig !== null) {
+                const { systemPrompt: _removed, ...cleanConfig } = payload.agentConfig;
+                payload.agentConfig = JSON.stringify(cleanConfig);
+            }
+            if (typeof payload.inputSchema === 'object' && payload.inputSchema !== null) {
+                payload.inputSchema = JSON.stringify(payload.inputSchema);
+            }
+            if (typeof payload.outputSchema === 'object' && payload.outputSchema !== null) {
+                payload.outputSchema = JSON.stringify(payload.outputSchema);
+            }
+
+            if (editingDef.id) {
+                await agentApi.updateDefinition(editingDef.id, payload);
+            }
+            setEditingDef(null);
+            await fetchAgents();
+            await reload();
+            toast('success', '保存成功');
+        } catch (err: any) {
+            toast('error', err.message || '保存失败');
+        } finally {
+            setSaving(false);
         }
     };
 
@@ -440,21 +489,45 @@ const MyAgentsTab: React.FC = () => {
                                             />
                                         </div>
                                     </div>
-                                    {/* 退订 */}
-                                    <button
-                                        onClick={() => handleUnsubscribeClick(agent.agentCode, agent.agentName)}
-                                        disabled={operating === agent.agentCode}
-                                        className="flex items-center gap-1 px-2 py-1 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded transition-colors disabled:opacity-50"
-                                    >
-                                        <Trash2 className="w-3 h-3" />
-                                        退订
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        {/* 编辑 */}
+                                        <button
+                                            onClick={() => handleEdit(agent.agentCode)}
+                                            disabled={operating === agent.agentCode}
+                                            className="flex items-center gap-1 px-2 py-1 text-xs text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 rounded transition-colors disabled:opacity-50"
+                                        >
+                                            <Pencil className="w-3 h-3" />
+                                            编辑
+                                        </button>
+                                        {/* 退订 */}
+                                        <button
+                                            onClick={() => handleUnsubscribeClick(agent.agentCode, agent.agentName)}
+                                            disabled={operating === agent.agentCode}
+                                            className="flex items-center gap-1 px-2 py-1 text-xs text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded transition-colors disabled:opacity-50"
+                                        >
+                                            <Trash2 className="w-3 h-3" />
+                                            退订
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
+
+            {/* 编辑弹窗 */}
+            {editingDef && (
+                <AgentEditModal
+                    def={editingDef}
+                    groupCodes={[]}
+                    capabilities={capabilities}
+                    onChange={setEditingDef}
+                    onSave={handleSaveDef}
+                    onCancel={() => setEditingDef(null)}
+                    saving={saving}
+                />
+            )}
         </div>
     );
 };
