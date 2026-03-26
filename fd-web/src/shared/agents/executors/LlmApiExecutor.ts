@@ -38,12 +38,25 @@ export class LlmApiExecutor implements AgentExecutor {
 
     /** 从 Capability 的 detectConfig 读取 API 配置（baseUrl/apiKey/model） */
     private getCapabilityConfig(definition: AgentDefinition): Record<string, any> {
-        if (!definition.requiredCapability) return {};
+        if (!definition.requiredCapability) {
+            console.warn(`[LlmApiExecutor] Agent "${definition.code}" 没有 requiredCapability`);
+            return {};
+        }
         try {
             const registry = AgentRegistry.getInstance();
             const cap = registry.getCapabilityByCode(definition.requiredCapability);
-            if (cap?.detectConfig) return JSON.parse(cap.detectConfig);
-        } catch { /* ignore */ }
+            console.log(`[LlmApiExecutor] Agent "${definition.code}" requiredCapability="${definition.requiredCapability}", cap found=${!!cap}, detectConfig=${cap?.detectConfig?.substring(0, 100)}`);
+            if (cap?.detectConfig) {
+                const parsed = JSON.parse(cap.detectConfig);
+                console.log(`[LlmApiExecutor] Parsed capConfig keys: ${Object.keys(parsed).join(', ')}`);
+                return parsed;
+            }
+            // 所有已加载的 capabilities
+            const allCaps = registry.getCapabilities();
+            console.warn(`[LlmApiExecutor] Capability "${definition.requiredCapability}" detectConfig 为空。已加载 ${allCaps.length} 个 capabilities: ${allCaps.map(c => c.code).join(', ')}`);
+        } catch (e) {
+            console.error(`[LlmApiExecutor] getCapabilityConfig 出错:`, e);
+        }
         return {};
     }
 
