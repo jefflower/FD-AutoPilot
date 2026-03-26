@@ -365,6 +365,10 @@ pub mod inner {
                 "/bridge/capabilities/models",
                 get(system_handler::models_detect_handler),
             )
+            .route(
+                "/bridge/capabilities/test",
+                get(system_handler::capability_test_handler),
+            )
             // Shadow Agent SSE endpoint
             .route("/bridge/agents/reply", post(reply_sse_handler))
             // Exec Log endpoints
