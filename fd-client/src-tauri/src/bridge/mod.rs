@@ -115,6 +115,10 @@ fn build_router(log_store: Arc<ExecLogStore>) -> Router {
             "/bridge/capabilities/models",
             get(system_handler::models_detect_handler),
         )
+        .route(
+            "/bridge/capabilities/test",
+            get(system_handler::capability_test_handler),
+        )
         // Exec Log endpoints
         .route("/bridge/exec-logs", get(exec_log_handler::list_exec_logs))
         .route(

@@ -229,6 +229,28 @@ pub struct NotebookLmCliRequest {
     pub title: Option<String>,
 }
 
+// ========== Capability Diagnostic Test ==========
+
+#[derive(Deserialize)]
+pub struct CapTestQueryParams {
+    pub cap: String,
+}
+
+#[derive(Serialize, Clone)]
+pub struct CapTestCheck {
+    pub name: String,
+    pub passed: bool,
+    pub detail: String,
+}
+
+#[derive(Serialize)]
+pub struct CapTestResponse {
+    pub checks: Vec<CapTestCheck>,
+    pub summary: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub error: Option<String>,
+}
+
 // ========== Type aliases for handler return types ==========
 
 /// Convenience type aliases to reduce boilerplate in handler signatures.

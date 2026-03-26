@@ -387,6 +387,108 @@ pub async fn models_detect_handler(
     }
 }
 
+// ========== Capability Diagnostic Test ==========
+
+/// Run a single diagnostic check: execute a command and return pass/fail + output.
+async fn run_check(name: &str, command: &str, args: &[&str]) -> super::types::CapTestCheck {
+    let name_owned = name.to_string();
+    let cmd = command.to_string();
+    let args_owned: Vec<String> = args.iter().map(|s| s.to_string()).collect();
+
+    let check_timeout = Duration::from_secs(10);
+
+    let result = timeout(
+        check_timeout,
+        tokio::task::spawn_blocking(move || {
+            Command::new(&cmd).args(&args_owned).output()
+        }),
+    )
+    .await;
+
+    match result {
+        Err(_) => super::types::CapTestCheck {
+            name: name_owned,
+            passed: false,
+            detail: "超时 (10s)".to_string(),
+        },
+        Ok(Err(e)) => super::types::CapTestCheck {
+            name: name_owned,
+            passed: false,
+            detail: format!("任务错误: {}", e),
+        },
+        Ok(Ok(Ok(output))) => {
+            let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+            let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+            if output.status.success() {
+                super::types::CapTestCheck {
+                    name: name_owned,
+                    passed: true,
+                    detail: if stdout.is_empty() { "(无输出)".to_string() } else { stdout },
+                }
+            } else {
+                let msg = if !stderr.is_empty() { stderr } else if !stdout.is_empty() { stdout } else { format!("退出码 {}", output.status) };
+                super::types::CapTestCheck {
+                    name: name_owned,
+                    passed: false,
+                    detail: msg,
+                }
+            }
+        }
+        Ok(Ok(Err(e))) => super::types::CapTestCheck {
+            name: name_owned,
+            passed: false,
+            detail: format!("{}", e),
+        },
+    }
+}
+
+/// Diagnostic test handler for capabilities.
+/// Currently only supports `notebooklm-py`.
+pub async fn capability_test_handler(
+    Query(params): Query<super::types::CapTestQueryParams>,
+) -> Json<super::types::CapTestResponse> {
+    let cap = params.cap;
+    eprintln!("[fd-bridge] GET /bridge/capabilities/test?cap={}", cap);
+
+    if cap != "notebooklm-py" {
+        return Json(super::types::CapTestResponse {
+            checks: vec![],
+            summary: "不支持".to_string(),
+            error: Some(format!("暂不支持 {} 的诊断测试", cap)),
+        });
+    }
+
+    // Run all checks concurrently
+    let (python_which, python_version, notebooklm_import, notebooklm_cli_which, path_env) = tokio::join!(
+        run_check("python3 路径", "which", &["-a", "python3"]),
+        run_check("python3 版本", "python3", &["--version"]),
+        run_check("notebooklm 包", "python3", &["-c", "import notebooklm; print(notebooklm.__version__)"]),
+        run_check("notebooklm CLI", "which", &["-a", "notebooklm"]),
+        // Get PATH via a shell so env var is expanded
+        run_check("PATH 环境变量", "sh", &["-c", "echo $PATH"]),
+    );
+
+    let checks = vec![python_which, python_version, notebooklm_import, notebooklm_cli_which, path_env];
+    let passed = checks.iter().filter(|c| c.passed).count();
+    let total = checks.len();
+    let summary = format!("{}/{} 项通过", passed, total);
+
+    // Generate actionable error message
+    let error = if !checks[2].passed {
+        Some("notebooklm 包未安装，请执行: pip install notebooklm".to_string())
+    } else if !checks[0].passed {
+        Some("python3 未找到，请确认已安装 Python 3".to_string())
+    } else {
+        None
+    };
+
+    Json(super::types::CapTestResponse {
+        checks,
+        summary,
+        error,
+    })
+}
+
 /// Extract a JSON array from AI output that may contain markdown code fences.
 fn extract_json_array(text: &str) -> String {
     let trimmed = text.trim();

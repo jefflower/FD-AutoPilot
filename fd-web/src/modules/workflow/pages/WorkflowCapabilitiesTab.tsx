@@ -11,7 +11,7 @@ import { capabilityApi, clientApi } from '../../../shared/services/serverApi';
 import type { CapabilityDefinition, ClientRegistration } from '../../../shared/types/server';
 import { useAgentContext, type CapSkillState } from '../../../shared/agents';
 import { useToast } from '../../../shared/hooks/useToast';
-import { detectCapabilities, type CapabilityDetectResult } from '../../../tauri/bridge';
+import { detectCapabilities, testCapability, type CapabilityDetectResult, type CapTestResult } from '../../../tauri/bridge';
 
 // ============ 常量 ============
 
@@ -91,6 +91,10 @@ const WorkflowCapabilitiesTab: React.FC = () => {
     const [detectResults, setDetectResults] = useState<Record<string, CapabilityDetectResult>>({});
     const [detecting, setDetecting] = useState(false);
 
+    // 诊断测试数据
+    const [testResults, setTestResults] = useState<Record<string, CapTestResult>>({});
+    const [testingCap, setTestingCap] = useState<string | null>(null);
+
     const loadCapabilities = useCallback(async () => {
         setLoading(true);
         try {
@@ -128,6 +132,21 @@ const WorkflowCapabilitiesTab: React.FC = () => {
             setDetectResults({});
         } finally {
             setDetecting(false);
+        }
+    }, []);
+
+    const runCapTest = useCallback(async (capCode: string) => {
+        setTestingCap(capCode);
+        try {
+            const result = await testCapability(capCode);
+            setTestResults(prev => ({ ...prev, [capCode]: result }));
+        } catch {
+            setTestResults(prev => ({
+                ...prev,
+                [capCode]: { checks: [], summary: '请求失败', error: '无法连接 fd-bridge' },
+            }));
+        } finally {
+            setTestingCap(null);
         }
     }, []);
 
@@ -291,6 +310,9 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                                 models={canExecute ? modelMap[cap.code] : undefined}
                                 onEdit={cap.providerType === 'LLM_API' && !cap.builtIn ? () => setEditingCap(cap) : undefined}
                                 onDelete={cap.providerType === 'LLM_API' && !cap.builtIn ? () => setDeletingCap(cap) : undefined}
+                                onTest={cap.code === 'notebooklm-py' ? () => runCapTest(cap.code) : undefined}
+                                testing={testingCap === cap.code}
+                                testResult={testResults[cap.code]}
                             />
                         ))}
                     </div>
@@ -368,12 +390,15 @@ const CapabilityCard: React.FC<{
     onToggle: () => void;
     onEdit?: () => void;
     onDelete?: () => void;
+    onTest?: () => void;
+    testing?: boolean;
+    testResult?: CapTestResult;
     detectResult?: CapabilityDetectResult;
     detecting: boolean;
     canExecute: boolean;
     skillState?: CapSkillState;
     models?: string[];
-}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, onEdit, onDelete, detectResult: _detectResult, detecting: _detecting, canExecute, skillState, models }) => {
+}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, onEdit, onDelete, onTest, testing, testResult, detectResult: _detectResult, detecting: _detecting, canExecute, skillState, models }) => {
     const { t } = useTranslation(['common']);
     const providerInfo = PROVIDER_TYPE_LABELS[capability.providerType] || {
         label: capability.providerType,
@@ -541,7 +566,60 @@ const CapabilityCard: React.FC<{
                     {!canExecute && `${t('capability.globalConfig', '全局')} · `}
                     {capability.enabled ? t('capability.enabled') : t('capability.disabled')}
                 </span>
+                {/* 诊断测试按钮 */}
+                {onTest && (
+                    <button
+                        onClick={onTest}
+                        disabled={testing}
+                        className={`px-2 py-0.5 rounded text-xs transition-colors ${
+                            testing
+                                ? 'bg-amber-500/20 text-amber-400 cursor-wait'
+                                : 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20'
+                        }`}
+                    >
+                        {testing ? '检测中...' : '诊断'}
+                    </button>
+                )}
             </div>
+
+            {/* 诊断测试结果面板 */}
+            {testResult && (
+                <div className="mt-3 p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
+                    <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-slate-300">诊断结果：{testResult.summary}</span>
+                        <button
+                            onClick={() => {
+                                const text = testResult.checks
+                                    .map(c => `${c.passed ? '✓' : '✗'} ${c.name}: ${c.detail}`)
+                                    .join('\n')
+                                    + (testResult.error ? `\n\n建议: ${testResult.error}` : '');
+                                navigator.clipboard.writeText(text);
+                            }}
+                            className="text-[10px] px-2 py-0.5 rounded bg-slate-700 text-slate-400 hover:text-slate-200 transition-colors"
+                        >
+                            复制
+                        </button>
+                    </div>
+                    <div className="space-y-1">
+                        {testResult.checks.map((check, i) => (
+                            <div key={i} className="flex items-start gap-2 text-xs">
+                                <span className={check.passed ? 'text-green-400' : 'text-red-400'}>
+                                    {check.passed ? '✓' : '✗'}
+                                </span>
+                                <span className="text-slate-400 shrink-0">{check.name}:</span>
+                                <span className={`font-mono break-all ${check.passed ? 'text-slate-300' : 'text-red-300'}`}>
+                                    {check.detail}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                    {testResult.error && (
+                        <p className="mt-2 text-xs text-amber-400 bg-amber-500/10 rounded px-2 py-1">
+                            💡 {testResult.error}
+                        </p>
+                    )}
+                </div>
+            )}
         </div>
     );
 };

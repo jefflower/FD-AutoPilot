@@ -181,6 +181,39 @@ export async function detectCapabilities(): Promise<CapabilityDetectResult[]> {
   }
 }
 
+// ============ Capability 诊断测试 ============
+
+export interface CapTestCheck {
+  name: string;
+  passed: boolean;
+  detail: string;
+}
+
+export interface CapTestResult {
+  checks: CapTestCheck[];
+  summary: string;
+  error: string | null;
+}
+
+/**
+ * 调用 fd-bridge 的诊断测试端点，对指定 Capability 执行多项环境检查。
+ * 目前仅支持 notebooklm-py。
+ */
+export async function testCapability(capCode: string): Promise<CapTestResult> {
+  try {
+    const resp = await fetch(
+      `${getBridgeBaseUrl()}/bridge/capabilities/test?cap=${encodeURIComponent(capCode)}`,
+      { signal: AbortSignal.timeout(30000) },
+    );
+    if (!resp.ok) {
+      return { checks: [], summary: '请求失败', error: `HTTP ${resp.status}` };
+    }
+    return await resp.json();
+  } catch (err: any) {
+    return { checks: [], summary: '请求失败', error: err.message || String(err) };
+  }
+}
+
 // ============ Skill 探测 ============
 
 export interface SkillInfo {
