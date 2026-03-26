@@ -79,6 +79,8 @@ const WorkflowCapabilitiesTab: React.FC = () => {
     const [toggling, setToggling] = useState<number | null>(null);
     const [confirmDialog, setConfirmDialog] = useState<{ capId: number; capName: string; linkedCount: number } | null>(null);
     const [showCreateDialog, setShowCreateDialog] = useState(false);
+    const [editingCap, setEditingCap] = useState<CapabilityDefinition | null>(null);
+    const [deletingCap, setDeletingCap] = useState<CapabilityDefinition | null>(null);
 
     // 在线客户端数据
     const [onlineCountMap, setOnlineCountMap] = useState<Record<string, number>>({});
@@ -287,6 +289,8 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                                 canExecute={canExecute}
                                 skillState={canExecute ? skillMap[cap.code] : undefined}
                                 models={canExecute ? modelMap[cap.code] : undefined}
+                                onEdit={cap.providerType === 'LLM_API' && !cap.builtIn ? () => setEditingCap(cap) : undefined}
+                                onDelete={cap.providerType === 'LLM_API' && !cap.builtIn ? () => setDeletingCap(cap) : undefined}
                             />
                         ))}
                     </div>
@@ -315,6 +319,40 @@ const WorkflowCapabilitiesTab: React.FC = () => {
                     onCancel={() => setShowCreateDialog(false)}
                 />
             )}
+
+            {/* 编辑 LLM API 对话框 */}
+            {editingCap && (
+                <EditLlmApiDialog
+                    capability={editingCap}
+                    onSaved={async () => {
+                        setEditingCap(null);
+                        await loadCapabilities();
+                        await reloadAgentContext();
+                        toast('success', '配置已更新');
+                    }}
+                    onCancel={() => setEditingCap(null)}
+                />
+            )}
+
+            {/* 删除确认对话框 */}
+            {deletingCap && (
+                <ConfirmDialog
+                    capName={deletingCap.name}
+                    linkedCount={linkedAgentCounts[deletingCap.code] || 0}
+                    onConfirm={async () => {
+                        try {
+                            await capabilityApi.deleteCapability(deletingCap.id);
+                            setDeletingCap(null);
+                            await loadCapabilities();
+                            await reloadAgentContext();
+                            toast('success', '已删除');
+                        } catch (err: any) {
+                            toast('error', err.message || '删除失败');
+                        }
+                    }}
+                    onCancel={() => setDeletingCap(null)}
+                />
+            )}
         </div>
     );
 };
@@ -328,12 +366,14 @@ const CapabilityCard: React.FC<{
     onlineClientsLoading: boolean;
     toggling: boolean;
     onToggle: () => void;
+    onEdit?: () => void;
+    onDelete?: () => void;
     detectResult?: CapabilityDetectResult;
     detecting: boolean;
     canExecute: boolean;
     skillState?: CapSkillState;
     models?: string[];
-}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, detectResult: _detectResult, detecting: _detecting, canExecute, skillState, models }) => {
+}> = ({ capability, linkedAgentCount, onlineClientCount, onlineClientsLoading, toggling, onToggle, onEdit, onDelete, detectResult: _detectResult, detecting: _detecting, canExecute, skillState, models }) => {
     const { t } = useTranslation(['common']);
     const providerInfo = PROVIDER_TYPE_LABELS[capability.providerType] || {
         label: capability.providerType,
@@ -362,7 +402,7 @@ const CapabilityCard: React.FC<{
                 ? 'border-slate-700/50'
                 : 'border-slate-700/30 opacity-60'
         }`}>
-            {/* 顶部：名称 + 开关 */}
+            {/* 顶部：名称 + 操作 */}
             <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                     <h3 className="text-slate-200 font-medium">{capability.name}</h3>
@@ -372,22 +412,39 @@ const CapabilityCard: React.FC<{
                         </span>
                     )}
                 </div>
-                <button
-                    onClick={onToggle}
-                    disabled={toggling}
-                    className={`relative w-10 h-5 rounded-full transition-colors focus:outline-none ${
-                        capability.enabled
-                            ? 'bg-green-600'
-                            : 'bg-slate-600'
-                    } ${toggling ? 'opacity-50 cursor-wait' : 'cursor-pointer'}`}
-                    aria-label={capability.enabled ? t('capability.enabled') : t('capability.disabled')}
-                >
-                    <span
-                        className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-transform ${
-                            capability.enabled ? 'translate-x-5' : 'translate-x-0'
-                        }`}
-                    />
-                </button>
+                <div className="flex items-center gap-2">
+                    {/* LLM_API 非内置类型显示编辑和删除 */}
+                    {capability.providerType === 'LLM_API' && !capability.builtIn && (
+                        <>
+                            {onEdit && (
+                                <button onClick={onEdit} className="text-slate-500 hover:text-cyan-400 transition-colors" title="编辑配置">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                </button>
+                            )}
+                            {onDelete && (
+                                <button onClick={onDelete} className="text-slate-500 hover:text-red-400 transition-colors" title="删除">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                                </button>
+                            )}
+                        </>
+                    )}
+                    <button
+                        onClick={onToggle}
+                        disabled={toggling}
+                        className={`relative w-10 h-5 rounded-full transition-colors focus:outline-none ${
+                            capability.enabled
+                                ? 'bg-green-600'
+                                : 'bg-slate-600'
+                        } ${toggling ? 'opacity-50 cursor-wait' : 'cursor-pointer'}`}
+                        aria-label={capability.enabled ? t('capability.enabled') : t('capability.disabled')}
+                    >
+                        <span
+                            className={`absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-transform ${
+                                capability.enabled ? 'translate-x-5' : 'translate-x-0'
+                            }`}
+                        />
+                    </button>
+                </div>
             </div>
 
             {/* Code */}
@@ -742,6 +799,100 @@ const CreateLlmApiDialog: React.FC<{
                         }`}
                     >
                         {submitting ? '创建中...' : '创建'}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+/** 编辑 LLM API Provider 对话框 */
+const EditLlmApiDialog: React.FC<{
+    capability: CapabilityDefinition;
+    onSaved: () => void;
+    onCancel: () => void;
+}> = ({ capability, onSaved, onCancel }) => {
+    // 从 detectConfig 解析现有配置
+    const existingConfig = (() => {
+        try { return JSON.parse(capability.detectConfig || '{}'); } catch { return {}; }
+    })();
+
+    const [name, setName] = useState(capability.name);
+    const [description, setDescription] = useState(capability.description || '');
+    const [baseUrl, setBaseUrl] = useState(existingConfig.baseUrl || '');
+    const [apiKey, setApiKey] = useState(existingConfig.apiKey || '');
+    const [model, setModel] = useState(existingConfig.model || '');
+    const [submitting, setSubmitting] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleSave = async () => {
+        if (!baseUrl.trim()) {
+            setError('请填写 API 地址');
+            return;
+        }
+        setSubmitting(true);
+        setError('');
+        try {
+            await capabilityApi.updateCapability(capability.id, {
+                name: name.trim(),
+                description: description.trim(),
+                detectConfig: JSON.stringify({
+                    baseUrl: baseUrl.trim(),
+                    ...(apiKey.trim() ? { apiKey: apiKey.trim() } : {}),
+                    ...(model.trim() ? { model: model.trim() } : {}),
+                }),
+            });
+            onSaved();
+        } catch (err: any) {
+            setError(err.message || '保存失败');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={onCancel}>
+            <div
+                className="bg-slate-800 border border-slate-700 rounded-lg w-[480px] max-h-[90vh] overflow-y-auto p-6"
+                onClick={e => e.stopPropagation()}
+            >
+                <h3 className="text-slate-200 font-medium mb-4">编辑 LLM API — {capability.code}</h3>
+
+                <div className="space-y-3">
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">名称</label>
+                        <input value={name} onChange={e => setName(e.target.value)}
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 focus:outline-none focus:border-cyan-500/50" />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">API 地址 <span className="text-red-400">*</span></label>
+                        <input value={baseUrl} onChange={e => setBaseUrl(e.target.value)} placeholder="https://api.deepseek.com"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50" />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">API Key</label>
+                        <input type="password" value={apiKey} onChange={e => setApiKey(e.target.value)} placeholder={existingConfig.apiKey ? '已配置（留空保持不变）' : 'sk-...'}
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50" />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">默认模型</label>
+                        <input value={model} onChange={e => setModel(e.target.value)} placeholder="deepseek-chat"
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50" />
+                    </div>
+                    <div>
+                        <label className="block text-xs text-slate-400 mb-1">描述</label>
+                        <input value={description} onChange={e => setDescription(e.target.value)}
+                            className="w-full px-3 py-2 text-sm bg-slate-900 border border-slate-700 rounded text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50" />
+                    </div>
+                </div>
+
+                {error && <p className="text-sm text-red-400 mt-3">{error}</p>}
+
+                <div className="flex items-center justify-end gap-3 mt-5">
+                    <button onClick={onCancel} className="px-3 py-1.5 text-sm text-slate-400 hover:text-slate-300 transition-colors">取消</button>
+                    <button onClick={handleSave} disabled={submitting}
+                        className={`px-4 py-1.5 text-sm rounded transition-colors ${submitting ? 'bg-cyan-700 text-cyan-300 cursor-wait' : 'bg-cyan-600 hover:bg-cyan-500 text-white'}`}>
+                        {submitting ? '保存中...' : '保存'}
                     </button>
                 </div>
             </div>
